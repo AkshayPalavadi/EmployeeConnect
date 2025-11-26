@@ -59,14 +59,7 @@ localStorage.setItem("mustFillEducationDetails", result.mustFillEducationDetails
 localStorage.setItem("mustFillProfessionalDetails", result.mustFillProfessionalDetails);
           setIsLoggedIn(true);
           setUserRole(role);
-          if (role === "employee") {
 
-            navigate("/employee/home");
-              window.location.reload();
-
-          } else if (role === "admin") {
-            navigate("/admin");
-          }
 
           // Step 3: Fetch Full Employee Details to get employeeId & experience
           try {
@@ -116,6 +109,15 @@ localStorage.setItem("mustFillProfessionalDetails", result.mustFillProfessionalD
             }
           } catch (error) {
             console.error("❌ Error fetching full employee details:", error);
+          }
+
+                    if (role === "employee") {
+
+            navigate("/employee/home");
+              window.location.reload();
+
+          } else if (role === "admin") {
+            navigate("/admin");
           }
         } else {
           setError("User data not found in employee list.");
