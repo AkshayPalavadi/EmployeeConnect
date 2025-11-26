@@ -1,0 +1,488 @@
+/* --- General Container --- */
+.performancemanagement-perf-container {
+  padding: 30px 40px;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: #f4f6fa;
+  min-height: 100vh;
+}
+
+/* --- Page Title --- */
+.performancemanagement-page-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 25px;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* --- Employee Card --- */
+.performancemanagement-employee-card {
+  background: #e0f2fe; /* Light Blue */
+  border-left: 6px solid #3b82f6; /* Blue accent */
+  border-radius: 16px;
+  padding: 25px 30px;
+  width: 600px;
+  margin: 0 auto 25px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.performancemanagement-employee-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.performancemanagement-employee-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  color: #334155;
+}
+
+.performancemanagement-emp-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 30px;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+/* --- Role Section --- */
+.performancemanagement-role-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.performancemanagement-role-card {
+  background: #fef3c7; /* Light Yellow */
+  border-left: 6px solid #f59e0b; /* Amber accent */
+  border-radius: 14px;
+  padding: 18px 20px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  flex: 1;
+  min-width: 180px;
+  max-width: 350px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.performancemanagement-role-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.performancemanagement-role-icon-manager,
+.performancemanagement-role-icon-hr {
+  font-size: 24px;
+  color: #3b82f6;
+  margin-top: 20px;
+}
+
+.performancemanagement-role-card p {
+  margin-top: 0px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.performancemanagement-role-card span {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.performancemanagement-dropdown-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-start;
+}
+.performancemanagement-dropdown-flex select {
+  width: 180px;    /* you can increase */
+}
+
+.performancemanagement-fy-dropdown {
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: border 0.2s ease;
+  margin: 5px;
+}
+
+.performancemanagement-fy-dropdown:hover {
+  border-color: #3b82f6;
+}
+
+/* --- Goals Section --- */
+.performancemanagement-goals-section {
+  margin: 40px auto;
+  width: 95%;
+  max-width: 1100px;
+  background: #fefefe; /* Almost white */
+  border-left: 6px solid #10b981; /* Green accent */
+  border-radius: 16px;
+  padding: 20px 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.performancemanagement-goals-header h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 12px;
+}
+
+/* --- Goals Table --- */
+.performancemanagement-goals-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  table-layout: fixed;
+}
+
+.performancemanagement-goals-table th,
+.performancemanagement-goals-table td {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 0.92rem;
+  border: 1px solid #e2e8f0;
+  word-wrap: break-word;
+  white-space: normal;
+  vertical-align: top;
+}
+
+.performancemanagement-goals-table th {
+  background-color: #e8f0fe;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.performancemanagement-goals-table tr:hover {
+  background-color: #f9fbff;
+  transition: 0.2s ease;
+}
+
+.performancemanagement-task-row {
+  cursor: pointer;
+}
+
+/* Column Widths */
+.performancemanagement-goals-table th:nth-child(1),
+.performancemanagement-goals-table td:nth-child(1) { width: 35%; }
+.performancemanagement-goals-table th:nth-child(2),
+.performancemanagement-goals-table td:nth-child(2) { width: 15%; }
+.performancemanagement-goals-table th:nth-child(3),
+.performancemanagement-goals-table td:nth-child(3) { width: 12%; }
+.performancemanagement-goals-table th:nth-child(4),
+.performancemanagement-goals-table td:nth-child(4) { width: 12%; }
+.performancemanagement-goals-table th:nth-child(5),
+.performancemanagement-goals-table td:nth-child(5) { width: 10%; text-align:center; }
+.performancemanagement-goals-table th:nth-child(6),
+.performancemanagement-goals-table td:nth-child(6) { width: 16%; text-align:center; }
+
+.performancemanagement-progress-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.performancemanagement-progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.performancemanagement-progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.performancemanagement-progress-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  min-width: 35px;
+  text-align: right;
+}
+
+/* Add Task Button */
+.performancemanagement-add-task-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.performancemanagement-add-task-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  background-color: #3b82f6;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.performancemanagement-add-task-btn:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.performancemanagement-add-task-btn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Modal */
+.performancemanagement-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.performancemanagement-modal-content {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 25px;
+  max-width: 1000px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Final Review Section --- */
+.performancemanagement-final-review-container {
+  margin: 40px auto;
+  width: 95%;
+  max-width: 1100px;
+}
+
+.performancemanagement-final-review-toggle {
+  background-color: #e8f0fe;
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.performancemanagement-final-review {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Left Column: Rating & Manager Comments */
+.performancemanagement-final-left {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #d1fae5; /* Light green */
+  border-left: 6px solid #10b981; /* Green accent */
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.performancemanagement-emp-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1e293b;
+}
+
+.performancemanagement-overall-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #1e3a8a;
+  font-size: 1rem;
+}
+
+.performancemanagement-band-score {
+  font-weight: 600;
+  color: #065f46;
+  background: #ecfdf5;
+  display: inline-block;
+  padding: 8px 12px;
+  width: 90%;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.performancemanagement-final-left h4 {
+  margin: 0;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Manager comment box */
+.performancemanagement-final-left textarea {
+  width: 90%;
+  max-width: 400px;
+  height: 120px; /* fixed height */
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  resize: none;
+  font-size: 0.95rem;
+  background-color: #f9fafb;
+  color: #374151;
+  overflow-y: auto; /* ✅ scroll inside when content overflows */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+/* Right Column: Employee Actions */
+.performancemanagement-final-right {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #fef3c7; /* Light Yellow */
+  border-left: 6px solid #f59e0b; /* Amber accent */
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.performancemanagement-agree-disagree {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.performancemanagement-agree-disagree label {
+  font-size: 0.95rem;
+  color: #475569;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Employee comment box */
+.performancemanagement-emp-comment {
+  width: 90%;
+  max-width: 400px;
+  height: 100px; /* fixed height */
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  padding: 10px;
+  resize: none;
+  font-size: 0.95rem;
+  transition: border 0.2s ease;
+  overflow-y: auto; /* ✅ scroll inside */
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+.performancemanagement-emp-comment::-webkit-scrollbar,
+.performancemanagement-final-left textarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.performancemanagement-emp-comment::-webkit-scrollbar-thumb,
+.performancemanagement-final-left textarea::-webkit-scrollbar-thumb {
+  background-color: #94a3b8;
+  border-radius: 8px;
+}
+
+.performancemanagement-emp-comment:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* Buttons */
+.performancemanagement-finalize-btn,
+.performancemanagement-report-btn,
+.simulate-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: block;
+  width: fit-content;
+}
+
+.performancemanagement-finalize-btn { background-color: #22c55e; }
+.performancemanagement-finalize-btn:hover:not(:disabled) { background-color: #16a34a; }
+
+.performancemanagement-report-btn { background-color: #ef4444; }
+.performancemanagement-report-btn:hover:not(:disabled) { background-color: #dc2626; }
+
+.simulate-btn { background-color: #6c63ff; }
+
+.performancemanagement-finalize-btn:disabled,
+.performancemanagement-report-btn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* No Goals Text */
+.performancemanagement-no-goals {
+  padding: 14px;
+  text-align: center;
+  font-style: italic;
+  color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .performancemanagement-final-review {
+    flex-direction: column;
+  }
+
+  .performancemanagement-agree-disagree {
+    gap: 20px;
+  }
+
+  .performancemanagement-role-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Make comment boxes full width on mobile */
+  .performancemanagement-final-left textarea,
+  .performancemanagement-emp-comment {
+    width: 100%;
+    max-width: 100%;
+  }
+}

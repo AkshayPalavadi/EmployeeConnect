@@ -1,0 +1,600 @@
+/* 🌟 Root Container */
+.timesheet-container {
+  font-family: "Poppins", sans-serif;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 35px;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  border-radius: 25px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+ 
+/* 🧭 Header Navigation - Smaller Size */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: linear-gradient(135deg, #80bef0, #021831); */
+  padding: 10px 15px; 
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(58, 71, 82, 0.4);
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.2rem; /* smaller month/year text */
+  letter-spacing: 0.5px;
+}
+
+.header button {
+  background: white;
+  color: #1976d2;
+  border: none;
+  border-radius: 50%;
+  width: 30px;  /* smaller buttons */
+  height: 30px;
+  font-size: 1rem; /* smaller arrow icons */
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.header button:hover {
+  background: #1565c0;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* 📅 Weekday Header */
+.weekday-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr) 110px;
+  column-gap: 8px;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Center weekday names */
+.weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 45px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  border-radius: 10px;
+  margin-right: -40px;
+}
+
+/* 🎨 Full Background Colors for Weekday Headers */
+.weekday:nth-child(1) {  color: rgb(197, 7, 7); width: 78px; } 
+.weekday:nth-child(2) {  color: rgb(0, 0, 0); width: 78px; margin-left: 6px;} 
+.weekday:nth-child(3) { color: black; width: 78px; margin-left: 9px;} 
+.weekday:nth-child(4) { color: black; width: 78px; margin-left: 10px;} 
+.weekday:nth-child(5) {  color: black; width: 78px; margin-left: 10px;} 
+.weekday:nth-child(6) {  color: black; width: 78px; margin-left: 11px;} 
+.weekday:nth-child(7) {  color: black; width: 78px; margin-left: 13px;} 
+
+/* Center Weekly Hours header */
+.week-total-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background: #f5bba0; */
+  color: black;
+  font-weight: 600;
+  font-size: 1rem;
+  height: 45px;  
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+/* 🖌 Hover styling for weekday headers */
+.weekday:hover {
+  filter: brightness(1.1);
+  cursor: pointer;
+  transform: translateY(-2px);
+  transition: all 0.25s ease;
+}
+
+/* 📆 Calendar Week Rows */
+.weeks-wrapper {
+  margin-top: 10px;
+}
+
+.week-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr) 90px;
+  column-gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* 🟢 Date Cell Styling */
+.cell {
+  background: white;
+  margin: 5px;
+  border-radius: 14px;
+  padding: 5px;
+  min-height: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  position: relative;
+}
+
+.cell:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.cell.empty {
+  background: transparent;
+  box-shadow: none;
+  cursor: default;
+}
+
+/* 🧭 Cell Colors based on entries / state */
+.cell-green { background: linear-gradient(135deg, #ffffff, #ffffff); color: #000000; }
+.cell-yellow { background: linear-gradient(135deg, #fff3b0, #ffe57f); color: #8d6e63; }
+.cell-red { background: linear-gradient(135deg, #ffb3b3, #ff9999); color: #b71c1c; }
+
+.sunday-cell {
+  /* background: rgb(226, 199, 199);  */
+  color: rgb(236, 42, 42); 
+  font-weight: 600;
+  border-radius: 14px;
+  /* box-shadow: 0 2px 6px rgba(17, 17, 17, 0.3); */
+  transition: all 0.25s ease;
+}
+
+.sunday-cell:hover {
+  transform: translateY(-3px) scale(1.03);
+  /* box-shadow: 0 4px 10px rgba(183, 28, 28, 0.5); */
+}
+
+.sunday-cell .day,
+.sunday-cell .hours {
+  /* color: black !important; */
+  font-weight: 500;
+}
+
+.saturday {
+  background: linear-gradient(135deg, #e0e0e0, #bdbdbd); 
+  color: #37474f;
+  font-weight: 600;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+.saturday:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.holiday {
+  /* background: linear-gradient(135deg, #ffe9e9, #ffd6d6); */
+  color: #000000;
+  /* border: 1px dashed #ff5252; */
+  position: relative;
+  font-weight: 600;
+  /* font-style: italic; */
+}
+
+.holiday::after {
+  /* content: "🛑"; */
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  font-size: 1rem;
+}
+
+.not-editable {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 🗓️ Day and Hours Text */
+.day { font-weight:500; font-size: 1rem; }
+.hours { font-size: 0.7rem; color: rgb(4, 158, 12); font-weight: 500; }
+
+/* 🔢 Weekly & Monthly Totals */
+.week-total-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: rgb(196, 192, 192) ; */
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  border-radius: 12px;
+  margin: 5px;
+  width: 70px;
+  /* box-shadow: 0 4px 10px rgba(25, 118, 210, 0.4); */
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.week-total-cell:hover {
+  transform: translateY(-3px) scale(1.03);
+  /* box-shadow: 0 8px 20px rgba(25, 118, 210, 0.6); */
+  background: #5a5a5abb;
+  cursor: pointer;
+}
+
+.working-days{
+  background: rgb(196, 192, 192) ;
+  color: #000000;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+  width: 230px;
+  font-weight: 100;
+  /* margin-left: auto; */
+  height: 20px;
+}
+
+.working-days h3 {
+  margin-top:  3px;;
+  font-size: 1.1rem;
+} 
+
+.total-summary {
+  background: rgb(196, 192, 192) ;
+  color: #fff;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+  width: 230px;
+  font-weight: 100;
+  margin-left: auto;
+  height: 20px;  color: #000000;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+  width: 230px;
+  font-weight: 100;
+  margin-left: auto;
+  height: 20px;
+}
+
+.total-summary h3 {
+  margin-top:  3px;;
+  font-size: 1.1rem;
+}
+
+
+
+/* 📍 Selected Date Display */
+.selected-date-display {
+  margin: 10px 0 16px 0;
+  font-size: 15px;
+  color: #333;
+  background: #f4f7ff;
+  border-left: 4px solid #3b82f6;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(6, 39, 94, 0.2);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.selected-date-display span {
+  color: #555;
+  font-weight: 500;
+  margin-right: 4px;
+  font-size: 14px;
+}
+
+/* Highlight selected day */
+.selected-day {
+  background: #3b82f6 !important;
+  color: white !important;
+  /* font-weight: bold; */
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
+}
+
+/* 🧾 Entry Form */
+.entry-form {
+  margin-top: 10px;
+  background: rgb(238, 238, 238);
+  padding: 25px 30px;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.87);
+  transition: all 0.3s ease;
+  margin: auto;
+}
+
+.entry-form h4 {
+  text-align: center;
+  color: #000000;
+  margin-bottom: 20px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+/* Form Rows - Align Category / Project Name / Project Code */
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.form-row label {
+  width: 140px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 6px rgba(25, 118, 210, 0.3);
+}
+
+.project-name {
+  flex: 1;
+  border-radius: 10px;
+}
+
+.entry-form button {
+  width: 40%;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 30px;
+}
+
+.entry-form button:hover {
+  background: linear-gradient(135deg, #66bb6a, #1b5e20);
+}
+
+/* Radio / Project Type */
+.project-type {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.radio-group {
+  display: flex;
+  gap: 30px;
+  margin-top: 8px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  background-color: #f4f4f4;
+}
+
+.radio-group input[type="radio"]:checked + span {
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
+}
+
+.radio-group input[type="radio"][value="billable"]:checked + span {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+}
+
+.radio-group input[type="radio"][value="non-billable"]:checked + span {
+  background: linear-gradient(135deg, #ff7043, #d84315);
+}
+
+/* Popup Modal */
+.popup-overlay-timesheet {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(20, 20, 20, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(6px);
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.popup-content h3 {
+  text-align: center;
+  color: #1976d2;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.popup-content button {
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 0;
+  margin-top: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background: #0d47a1;
+}
+
+/* ✨ Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* For tablets and small laptops */
+@media (max-width: 1024px) {
+  .timesheet-container {
+    max-width: 90%;
+    padding: 25px;
+  }
+}   
+
+.project-type {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.project-type-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+  margin-right: 10px;
+}
+
+.radio-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 2px solid #d1d5db;
+  border-radius: 25px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.25s ease;
+  background: #fff;
+  margin-left: 37px;
+}
+
+.radio-option input[type="radio"] {
+  display: none; /* Hide native radio */
+}
+
+/* Hover effect */
+.radio-option:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+/* Selected state */
+.radio-option.selected {
+  background: #dfe7f5;
+  border-color: #3b82f6;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 3px 10px rgba(59, 130, 246, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Add focus ring when using keyboard */
+.radio-option input[type="radio"]:focus + span {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+  border-radius: 20px;
+}
+
+.holiday-dot {
+  width: 6px;
+  height: 6px;
+  background-color: red;
+  border-radius: 50%;
+  margin: 2px auto 0;
+}
+
+.cell.holiday:hover {
+  background-color: #ffeaea;
+  cursor: default;
+}
+
+.cell.holiday.not-editable {
+  opacity: 0.8;
+}
+
+
+
+/* Leave day styling */
+.leave-cell {
+  background-color: #ffe6e6; /* light red/pink background */
+  color: #d32f2f; /* red text */
+  font-weight: 900;
+  cursor: not-allowed; /* shows that it’s not clickable/editable */
+}
+
+/* Optional: hover effect for other cells */
+.cell:not(.leave-cell):hover {
+  background-color: #f0f0f0;
+}
+
+/* Ensure hours are also red if showing */
+.leave-cell .hours {
+  color: #d32f2f;
+}
+
+/* Prevent pointer events if you want to block clicks entirely */
+.leave-cell {
+  pointer-events: none;
+}

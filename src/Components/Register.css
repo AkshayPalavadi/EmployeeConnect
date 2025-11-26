@@ -1,0 +1,244 @@
+.registerpage-emp-register-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.registerpage-emp-register-left {
+  max-width: 40%;
+  text-align: left;
+}
+
+.registerpage-emp-register-left h1 {
+  font-size: 1.8rem; /* slightly smaller */
+  font-weight: 700;
+  margin-top: 20px; /* reduced */
+}
+
+.registerpage-emp-highlight {
+  color: #3ba55d;
+}
+
+.registerpage-emp-register-left p {
+  margin-top: 10px;
+  color: #444;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+/* 🧱 Register Form Card (Reduced Height) */
+.registerpage-emp-register-form {
+  width: 350px; /* narrower card */
+  background: #ffffff;
+  padding: 25px 24px; /* reduced from 35px 30px */
+  border-radius: 14px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registerpage-emp-register-form h2 {
+  text-align: center;
+  margin-bottom: 15px; /* reduced */
+  color: #222;
+  font-size: 20px; /* smaller title */
+}
+
+/* 🧾 Form Fields */
+.registerpage-emp-register-form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* reduced from 12px */
+}
+
+.registerpage-emp-register-form input,
+.registerpage-emp-register-form select {
+  padding: 8px 10px; /* smaller padding */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s ease;
+  /* width: 100%; */
+  font-size: 14px; /* slightly smaller */
+}
+
+.registerpage-emp-register-form input:focus,
+.registerpage-emp-register-form select:focus {
+  border-color: #3ba55d;
+  box-shadow: 0 0 3px rgba(59, 165, 93, 0.3);
+}
+
+/* 📞 Phone Group */
+.registerpage-emp-phone-group {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+}
+
+.registerpage-emp-countrycode {
+  max-width: 90px;
+  height: 40px; /* matches phone input height */
+  padding: 8px 30px 8px 10px; /* room for arrow on right */
+  /* margin-top: 5px; */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  box-sizing: border-box;
+
+  /* Hide default arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Custom dropdown arrow */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%233ba55d' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+.registerpage-emp-countrycode:focus {
+  border-color: #3ba55d;
+  box-shadow: 0 0 3px rgba(59, 165, 93, 0.3);
+}
+
+.registerpage-emp-phonenumber {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* ✅ Fix height alignment between select and input */
+.registerpage-emp-countrycode,
+.registerpage-emp-phonenumber {
+  height: 40px;              /* fixed equal height */
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* 🔐 Password Field */
+.registerpage-emp-password-group {
+  position: relative;
+  width: 100%;
+}
+
+.registerpage-emp-password-input {
+  width: 93%;
+  padding-right: 35px;
+}
+
+.registerpage-emp-eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+  font-size: 16px;
+}
+
+.registerpage-emp-eye-icon:hover {
+  color: #3ba55d;
+}
+
+/* 🚀 Submit Button */
+.registerpage-submit-reg {
+  background: #3ba55d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px; /* smaller button */
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.registerpage-submit-reg:hover {
+  background: #2e8a4f;
+}
+
+/* 🔗 Login Redirect */
+.registerpage-emp-login-text {
+  text-align: center;
+  margin-top: 10px; /* reduced */
+  color: #555;
+  font-size: 13px;
+}
+
+.registerpage-emp-login-link {
+  color: #3ba55d;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.registerpage-emp-login-link:hover {
+  text-decoration: underline;
+}
+
+/* 🖼️ Logo + Content */
+.registerpage-emp-logo {
+  width: 120px; /* smaller logo */
+  height: 120px;
+}
+
+.registerpage-emp-content {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+/* ⚠️ Error Message */
+.registerpage-emp-error {
+  color: red;
+  font-size: 12px;
+  margin-top: -6px;
+  margin-bottom: 4px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 900px) {
+  .registerpage-emp-register-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .registerpage-emp-register-left {
+    max-width: 90%;
+  }
+
+  .registerpage-emp-register-form {
+    width: 90%;
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .registerpage-emp-content {
+    font-size: 15px;
+  }
+}
+
+.Date-of-Birth
+{
+  margin-bottom: 0px;
+  font-weight: 700;
+}

@@ -1,0 +1,321 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 2px solid #e5e5e5;
+  background: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center; 
+  gap: 15px; 
+}
+
+.logo-img {
+  width: 150px;  
+  height: 150px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.dhativi-text {
+  font-weight: 700;
+  font-size: 34px;
+  color: #000;
+}
+
+.green-line {
+  width: 88%;
+  height: 2px;
+  background-color: #00995e;
+  margin: 2px 0;
+}
+
+.business-text {
+  font-size: 12px;
+  color: #000;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  min-width: 200px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  font-weight: 500;
+  color: #333
+}
+
+.nav-links li a {
+    color: #333;
+    text-decoration: none;
+
+}
+
+.login-btn-nav {
+  background: #46af4f;
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 90px;
+  height: 35px;
+}
+
+.login-btn:hover {
+  background: #007be0;
+}
+
+.nav-links li {
+  cursor: pointer; 
+  transition: color 0.3s ease;
+}
+
+.nav-links li:hover {
+  color: #069106; 
+}
+
+.profile-dropdown {
+  position: relative;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+}
+
+.profile-name {
+  background: #ffffff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+/* .profile-name:hover {
+  background: #45a049;
+} */
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 160px;
+  z-index: 100;
+}
+
+.dropdown-menu p {
+  padding: 10px 15px;
+  margin: 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown-menu p:hover {
+  background: #f5f5f5;
+}
+
+.dropdown-menu .logout {
+  color: rgb(58, 51, 51);
+  font-weight: 500;
+  width: 70px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === PROFILE DROPDOWN CONTAINER === */
+.modern-profile-dropdown {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 280px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 18px 16px;
+  z-index: 100;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* === PROFILE HEADER SECTION === */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 12px;
+}
+
+
+
+.profile-pic-container {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  /* margin-left: -20px; */
+  /* border-radius: 20px; */
+}
+.profile-pic-container-dd {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  /* margin-left: -60px; */
+  /* border-radius: 20px; */
+}
+
+
+.profile-pic-img {
+  width: 100%;
+  height: 100%;
+  color: #c6c6c6;
+  /* margin-left: 20px; */
+  border-radius: 30px;
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 3px;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+/* === NAME & EMAIL === */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.profile-name-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #222;
+  text-transform: capitalize;
+}
+
+.edit-icon {
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+
+.profile-email {
+  font-size: 13px;
+  color: #777;
+  margin-top: 2px;
+}
+
+/* === JOB STATS SECTION === */
+.job-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  gap: 10px;
+}
+
+.job-box {
+  flex: 1;
+  background-color: #f9fafb;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.job-box:hover {
+  background-color: #eef6ff;
+  border-color: #007bff;
+}
+
+.job-number {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+.job-label {
+  font-size: 13px;
+  color: #555;
+  margin-top: 2px;
+}
+
+/* === LOGOUT BUTTON === */
+.logout-btn {
+  width: 100%;
+  background-color: #ff4444;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 0;
+  margin-top: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #e03939;
+}
+
+/* === NAV PROFILE BUTTON IN TOP BAR === */
+.profile-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  margin-left: 10px;
+}
+
+.profile-btn {
+  background-color: white;
+  color: #000000;
+  border: none; 
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+.disabled-link-nav {
+  cursor: pointer;
+  color: #333; /* your navbar text color */
+}

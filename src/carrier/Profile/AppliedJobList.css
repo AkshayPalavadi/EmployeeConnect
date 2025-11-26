@@ -1,0 +1,53 @@
+.applied-job-container {
+  width: 90%;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border: 2px solid #000; 
+}
+
+.applied-job-title {
+  text-align: center;
+  color: #1b8a47; 
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.applied-job-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #000; 
+}
+
+.applied-job-table th {
+  background-color: #1b8a47; 
+  color: #000; 
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 12px 15px;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #000;
+}
+
+.applied-job-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+  color: #222;
+}
+
+.applied-job-table tr:nth-child(even) {
+  background-color: #f8fdf8;
+}
+
+.applied-job-table tr:hover {
+  background-color: #e6f5ea;
+  transition: background-color 0.3s ease;
+}

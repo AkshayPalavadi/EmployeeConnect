@@ -1,0 +1,149 @@
+/* --- General Container --- */
+.tasks-task-container {
+  padding: 20px;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: #f4f6fa;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Page Title --- */
+.tasks-task-container h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/* --- Task Table --- */
+.tasks-task-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.tasks-task-table th,
+.tasks-task-table td {
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: #334155;
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: left;
+}
+
+.tasks-task-table th {
+  background-color: #e0f2fe; /* light blue header */
+  font-weight: 600;
+  color: #1e40af;
+}
+
+.tasks-task-table tr:nth-child(even) td {
+  background-color: #f9fafb;
+}
+
+.tasks-task-table tr:hover td {
+  background-color: #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+/* Column widths */
+.tasks-task-table th:nth-child(1),
+.tasks-task-table td:nth-child(1) { width: 35%; }
+.tasks-task-table th:nth-child(2),
+.tasks-task-table td:nth-child(2) { width: 15%; }
+.tasks-task-table th:nth-child(3),
+.tasks-task-table td:nth-child(3) { width: 15%; }
+.tasks-task-table th:nth-child(4),
+.tasks-task-table td:nth-child(4) { width: 15%; }
+.tasks-task-table th:nth-child(5),
+.tasks-task-table td:nth-child(5) { width: 20%; text-align:center; }
+
+/* --- Input Fields --- */
+input[type="text"],
+input[type="date"] {
+  width: 90%;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* --- Buttons --- */
+.tasks-edit-btn,
+.tasks-del-btn,
+.tasks-save-btn,
+.tasks-cancel-btn,
+.tasks-add-task-btn {
+  cursor: pointer;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Button Colors */
+.tasks-edit-btn { background-color: #facc15; color: #1e293b; }
+.tasks-del-btn { background-color: #f87171; color: #fff; }
+.tasks-save-btn { background-color: #22c55e; color: #fff; }
+.tasks-cancel-btn { background-color: #9ca3af; color: #fff; }
+.tasks-add-task-btn { background-color: #3b82f6; color: #fff; }
+
+/* Hover Effects */
+.tasks-edit-btn:hover { background-color: #eab308; transform: scale(1.05); }
+.tasks-del-btn:hover { background-color: #ef4444; transform: scale(1.05); }
+.tasks-save-btn:hover { background-color: #16a34a; }
+.tasks-cancel-btn:hover { background-color: #6b7280; }
+.tasks-add-task-btn:hover { background-color: #2563eb; transform: scale(1.05); }
+
+/* Disabled state */
+button:disabled {
+  background-color: #cbd5e1 !important;
+  color: #6b7280 !important;
+  cursor: not-allowed !important;
+  opacity: 0.7;
+  transform: none !important;
+}
+
+/* Remove hover animation when disabled */
+button:disabled:hover { background-color: #cbd5e1 !important; }
+
+/* --- Add Task Section --- */
+.tasks-add-task-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .tasks-task-table th, .tasks-task-table td {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  input[type="text"], input[type="date"] {
+    width: 100%;
+  }
+
+  .tasks-add-task-section {
+    justify-content: center;
+  }
+}

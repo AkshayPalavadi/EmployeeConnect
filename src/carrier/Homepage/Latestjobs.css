@@ -1,0 +1,640 @@
+.latest-jobs-job {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.latest-jobs__title {
+  
+  color: #000000;
+  
+  font-family: Poppins;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 30px;
+
+line-height: 100%;
+letter-spacing: 0%;
+
+}
+
+.latest-jobs__subtitle {
+
+  color:#66B539;
+  margin-bottom: 1.5rem;
+  font-family: Poppins;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 50px;
+line-height: 100%;
+letter-spacing: 0%;
+
+}
+
+.latest-jobs__list-job {
+   display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 950px;       
+  margin-left: 320px;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+
+
+.latest-jobs__button-hp {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  background-color: #e0e0e0;
+  color: #000000;
+  border: 2px solid transparent;   /* initially no visible border */
+  border-radius: 4px;
+  font-size: 1rem;
+  font-style:600;
+  width: 100%;
+  max-width: 350px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  margin-left: -80px;
+}
+
+.latest-jobs__button:hover {
+  background-color: #e0e0e0;       
+  border-color: #007bff;         
+}
+
+
+.latest-jobs__plus {
+  font-weight: bold;
+  margin-left: 0.5rem;
+  width: 38;
+  height: 38;
+  top: 1944px;
+  left: 621px;
+  opacity: 1;
+}
+
+.latest-jobs__plus:hover{
+   background-color: #e0e0e0;       /* you can keep or change the background too */
+  border-color: #007bff; 
+}
+
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  text-align: left;
+  position: relative;
+  animation: popup 0.3s ease-in-out;
+  height: 170px ;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-content h2 {
+  color: #0e441c;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.apply-btn-latest-job {
+  background: #50a3f1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 900px;
+}
+
+.apply-btn:hover {
+  background: #1f5e30;
+  color: #f7f5f5;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #000000;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  width: 50px;
+}
+.close-btn:hover {
+  background-color: #888686;
+  color: #fcfcfc;
+  width: 50px;
+  height: 50px;
+}
+
+ .hero {
+  position: relative;
+  width: 100%;
+  height: 90vh;  /* adjust height as needed */
+  background-image: url("https://plus.unsplash.com/premium_photo-1661347859297-859b8ae1d7c5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzaW5lc3MlMjBtZWV0aW5nfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;  /* shorthand for top:0; right:0; bottom:0; left:0; */
+  background-color: rgba(0, 0, 0, 0.4);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+  max-width: 800px;
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 80px;
+}
+
+.hero__cta-jobHome {
+  background-color: #0059ff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 180px;
+  /* margin-bottom: 50px; */
+}
+
+.hero__cta:hover {
+  background-color: #0056b3;
+}
+
+.footer-subscribe {
+  background-color: #ffffff; 
+  padding: 4rem 1rem 2rem;
+  color: #333;
+  text-align: center;
+ 
+}
+
+.footer-subscribe__newsletter {
+width: 70%;
+  margin: 0 auto 2rem;
+  background-color: #0A1128; /* dark overlay behind newsletter form */
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+justify-content: space-between;
+}
+
+.footer-subscribe__title {
+  color: #f8f4f4;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  /* margin-left: 60px; */
+}
+
+.footer-subscribe__form-wrapper {
+  display: flex;
+  justify-content: space-between;
+ /* padding: 0 10px; */
+  background-color: #ffffff;
+  /* position: relative; */
+ 
+}
+
+.footer-subscribe__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 0 10px;
+}
+
+.footer-subscribe__button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff; /* change to your brand’s blue */
+  border: none;
+  /* border-radius: 4px; */
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  /* margin-bottom: 10px; */
+  transition: background-color 0.3s ease;
+}
+
+.footer-subscribe__button:hover {
+  background-color: #0056b3;  
+  color: white;
+}
+
+
+.latest-job-footer {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: white; /* or whatever background you use */
+  display: flex;
+  align-items: center;            /* vertically center items if they differ in height */
+  justify-content: space-between; /* push children to left & right */
+  box-sizing: border-box;
+}
+
+/* container to split left / right */
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+ 
+}
+
+/* Left links (About, Discover, etc.) */
+.footer-links {
+  display: flex;
+  gap: 1.5rem; /* spacing between links */
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #007bff;
+}
+
+/* Social icons (right side) */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding-right: 200px;
+  color: rgb(0, 0, 0);
+  justify-content: end;
+  margin-top:  -40px;
+}
+
+.social-links__icon {
+  color: #333;
+  font-size: 1.5rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.social-links__icon:hover {
+  color: #007bff;
+  transform: translateY(-2px);
+}
+
+
+
+
+
+.footer-subscribe__links {
+  margin-left: 170px;
+background-color: white;}
+
+.footer-subscribe__links a {
+  margin: 0 0.75rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-subscribe__links a:hover {
+  color: #007bff;
+}
+
+.footer-subscribe__bottom {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
+
+.footer-subscribe__legal {
+  margin-top: 0.5rem;
+}
+
+.footer-subscribe__legal a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-subscribe__legal a:hover {
+  color: #333;
+}
+
+.social-links-latestjob {
+  display: flex;
+  gap: 1rem;
+  justify-content: center; /* or flex-start, flex-end depending where you want */
+  align-items: center;
+  margin-left: 800px;
+  
+  /* top:80px; */
+}
+
+.social-links__icon-latestjob {
+  color: #333; /* default icon color */
+  font-size: 1.5rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  
+  
+}
+
+.social-links__icon:hover {
+  color: #007bff; /* blue or your brand color */
+  transform: translateY(-2px);
+}
+
+.footerlast {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: #ffffff;  /* or whatever background */
+  box-sizing: border-box;
+}
+
+.footerlast .footer-subscribe__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;   /* optional: to limit width */
+  margin: 0 auto; 
+       /* center the container horizontally */
+}
+
+.footerlast .footer-subscribe__bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footerlast .logo {
+  height: 110px;  /* adjust as needed */
+  width: auto;
+  object-fit: contain;
+  margin-left: -130px;
+}
+
+.footerlast .footer-subscribe__legal {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.footerlast .footer-subscribe__legal a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerlast .footer-subscribe__legal a:hover {
+  color: #333;
+}
+
+
+.popup-overlay {
+  position: fixed;
+  top: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e8f9ee;
+  color: #155724;
+  border-left: 6px solid #2ecc71;
+  padding: 16px 24px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgb(248, 247, 247);
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 1000;
+  animation: fadeInDown 0.5s ease-out, fadeOut 0.6s ease-in 2.5s forwards;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Slide down from top */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+/* Fade out after delay */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-30px) translateX(-50%);
+  }
+}
+/* Popup overlay that covers entire screen */
+.popup-overlay {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); 
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  z-index: 9999; 
+  padding-top: 80px; 
+  margin-left: 540px;
+}
+
+/* Popup message box */
+.popup-message {
+  background: #fff;
+  color: #333;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  font-size: 16px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-message.success {
+  border-left: 5px solid #4CAF50;
+}
+
+/* Fade-in animation for popup */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Popup overlay: full-screen semi-transparent background */
+.popup-overlay {
+  position: centre;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* centers vertically and horizontally */
+  z-index: 9999;
+}
+
+/* Popup message box */
+.popup-message {
+  background: #fff;
+  color: #333;
+  padding: 25px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-message.success {
+  border-left: 5px solid #4CAF50;
+}
+
+/* Animation for fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+.subscribe-note {
+  color: #d8000c;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.input-error {
+  border: 2px solid #d8000c !important;
+  background: #ffe6e6;
+  /* position: absolute; */
+}
+
+.input-success {
+  border: 2px solid #22c55e !important;
+  background: #e6ffe9;
+}
+
+.footer-subscribe__input {
+  transition: 0.25s ease-in-out;
+}
+
+/* Wrapper alignment fix */
+.footer-subscribe__form-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Input field styles */
+.footer-subscribe__input {
+  width: 280px;
+  padding: 10px 14px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Validation states */
+.input-error {
+  border-color: red !important;
+}
+
+.input-success {
+  border-color: green !important;
+}
+
+/* Error message style + alignment fix */
+.subscribe-note {
+  color: #ffcc00;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Button styling no change — but kept for alignment */
+.footer-subscribe__button {
+  padding: 10px 16px;
+  border: none;
+  background: #00933f;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  /* margin-bottom: 20px; */
+}
+
+.footer-subscribe-form {
+  width: fit-content;
+}
+

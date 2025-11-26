@@ -1,0 +1,179 @@
+.header-job{
+    display: flex;
+    align-items: center;   /* vertically align logo + text */
+    gap: 80px;            
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+    }
+.header-job h1 {
+  font-size: 3.5rem;   /* bigger text (~48px) */
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.header-job .logo-img{
+    width: 180px;
+    height: 150px;
+}
+.header-job .highlight{
+    color: rgb(42, 129, 42);
+    margin-right: 100px;
+    font-size: 2.5rem;
+}
+
+.welcomeimg{
+    width: 70%;
+    /* margin-top: -40px; */
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.left-job{
+    margin-left: 50px
+}
+.right {
+    padding: 40px;
+    margin-right: 20px;
+    margin-left: 80px;
+    /* width: 50%; */
+    margin-bottom: 100px;
+     border-radius: 20px; /*rounded edges*/
+  box-shadow: 0px 0px 60px rgba(109, 4, 247, 0.1); /* soft shadow */
+}
+
+.right h1{
+    text-align: center;
+  font-size:2.2rem;
+  margin-bottom: 10px;
+}
+
+.sub-text{
+  color: #0a8f3d;
+  font-style: italic;
+  font-size:larger;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-form-job {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-job label {
+  margin: 10px 0 5px;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  padding: 5px;
+
+}
+
+.login-form-job input {
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.forgot {
+  text-align: right;
+  margin: 10px 0;
+}
+
+.forgot a {
+  font-size: 18px;
+  color:black;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.forget button {
+  background: #2eb82e;
+  color: white;
+  border: none;
+  width: 50%;
+   margin-left: 100px;
+  padding: 14px;
+  border-radius: 3px;
+  font-size: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 10px;
+
+}
+
+button:hover {
+  background: #249924;
+  color: black;
+}
+
+.login-btn-Login{
+  background: #30a830;
+  color: white;
+  padding: 10px;
+  margin: auto;
+  width: 100px;
+  font-size: medium;
+  text-align: center;
+  
+
+}
+.contact {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.contact a {
+  color: #0a8f3d;
+  text-decoration: none;
+} 
+
+.create-account {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  font-size: large;
+}
+
+.create-account .link{
+  color: blueviolet;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.create-account .link:hover{
+  text-decoration: underline;
+}
+
+.password-field{
+  display: flex;
+  align-items: center;
+  gap: 3;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 0px 10px;
+}
+
+.password-field input{
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.error-msg {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}

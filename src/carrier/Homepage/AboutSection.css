@@ -1,0 +1,42 @@
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  padding: 60px 100px;
+  background-color: #fff;
+}
+
+.about-image img {
+  width: 750px;
+  height: 450px;
+  /* border-radius: 10px; */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: -80px;
+}
+
+
+
+.about-content {
+  max-width: 500px;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-left: -50px;
+}
+
+.heading-job {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: -90px;
+  margin-left: -50px;
+   color: #4caf50;
+  /* font-size: 26px; */
+  margin-bottom: 15px;
+  font-weight: 700;
+}

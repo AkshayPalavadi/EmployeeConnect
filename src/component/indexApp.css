@@ -1,0 +1,303 @@
+/* Reset + vars */
+:root{
+  --sidebar-bg: #172129;
+  --brand-blue: #0b84ff;
+  --muted: #9aa3ad;
+  --card-bg: #f7f7f7;
+  --accent: #2f9e44;
+  --danger: #e14b4b;
+  --white: #ffffff;
+}
+
+/* *{box-sizing:border-box} */
+body,html,#root{height:100%;margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:#fff;color:#222}
+
+.dashboard-employee{display:flex;overflow:hidden}
+.sidebar-wrap{
+  width:260px;
+  background:var(--sidebar-bg);
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  padding:24px;
+  gap:18px;
+  box-shadow: 1px 0 0 rgba(0,0,0,0.08);
+}
+
+/* brand */
+.brand{display:flex;gap:12px;align-items:center}
+.brand-circle{
+  width:64px;height:64px;border-radius:50%;
+  background:#e9f7ef;color:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;
+}
+.brand-title{font-weight:700;font-size:14px}
+.brand-sub{font-size:12px;color:rgba(255,255,255,0.7)}
+
+/* .sidebar{flex:1;display:flex;flex-direction:column;gap:12px;margin-top:12px} */
+.nav-item{
+  padding:12px 14px;border-radius:10px;cursor:pointer;color:#dbe6ee;font-weight:600;
+  transition: all .18s ease;
+}
+.nav-item:hover{background:rgba(255,255,255,0.04); transform:translateX(4px)}
+.nav-item.active{
+  background:var(--brand-blue); color:#fff; box-shadow:0 6px 18px rgba(11,132,255,0.12);
+}
+
+/* logout */
+.logout{
+  background:#ff6b6b;color:#fff;border:0;padding:12px 10px;border-radius:8px;font-weight:700;cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* main content */
+.main-content{flex:1;display:flex;flex-direction:column;}
+/* .topbar-employee{height:72px;top:0;  background:#243946;display:flex;align-items:center;padding:0 23px;color:#fff}
+.topbar-employee h2{margin:0;font-weight:600} */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.topbar-employee {
+  position: fixed;
+  top: 0;
+  left: 250px;
+
+    width: calc(100% - 250px); /* occupy the remaining space */
+ height: 72px;
+  background: #243946;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #fff;
+  z-index: 1000;
+}
+
+.main-content {
+  /* margin-top: 50px; */
+}
+
+
+.content-card{
+  background:linear-gradient(180deg,#fff,#fbfbfb);
+   padding:60px 0px 0px 0px; border-radius:6px; box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  flex:1; overflow:auto;
+}
+
+/* Styling for the required field asterisk */
+.required-star {
+  color: var(--danger); /* This uses your defined red color: #e14b4b */
+  font-weight: bold; /* Make it bold for extra visibility */
+  margin-left: 2px; /* A small space to separate it from the label text */
+}
+
+/* form */
+.form-wrap{max-width:980px;margin:0 auto}
+.form-wrap h3{margin:18px 0 18px 0}
+.form-grid
+
+{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.field{
+  display:flex;flex-direction:column}
+.field.full{grid-column:1 / -1}
+.field label{font-size:16px; font-weight: 610; margin-bottom:6px;color:#333}
+.field input, .field textarea, .field select{
+  background:#fff;border:1px solid #e6e9ee;padding:10px 12px;border-radius:8px;font-size:14px;outline:none;
+}
+.field input:focus, .field textarea:focus{border-color:var(--brand-blue);box-shadow:0 6px 18px rgba(11,132,255,0.06)}
+
+.err{color:var(--danger);font-size:12px;margin-top:6px}
+.muted{color:var(--muted);font-style:italic}
+
+/* actions */
+.form-actions{display:flex;justify-content:flex-end;gap:12px;margin-top:18px}
+.btn{padding:10px 16px;border-radius:8px;border:0;cursor:pointer;font-weight:700}
+.btn.primary{background:var(--brand-blue);color:#fff}
+.btn.secondary{background:#f1f3f4;color:#333}
+
+/* review */
+.review-card{background:var(--card-bg);padding:14px;border-radius:8px;display:flex;flex-direction:column;gap:10px}
+.review-card h4{margin:8px 0 0 0}
+.review-row{display:flex;gap:18px;padding:8px 10px;border-radius:6px;align-items:center}
+.review-label{width:220px;font-weight:600}
+.review-value{flex:1}
+
+/* submit error */
+.submit-err{background:#fff4f4;border:1px solid rgba(225,75,75,0.18);color:var(--danger);padding:12px;border-radius:8px;margin-top:12px}
+
+/* responsive */
+@media (max-width: 900px){
+  .sidebar-wrap{display:none}
+  .form-grid{grid-template-columns:1fr}
+  .content-card{margin:12px}
+}
+
+.review-card {
+  margin-top: 20px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.review-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.review-table td {
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  vertical-align: top;
+}
+
+.review-label {
+  font-weight: 600;
+  background: #f7f7f7;
+  width: 30%;
+}
+
+.review-value {
+  width: 70%;
+  color: #333;
+}
+
+h4, h5 {
+  /* margin-top: 25px; */
+  color: #22b573;
+  font-weight: bold;
+    font-size: 1.17em;
+    /* margin-bottom: 30px; */
+}
+
+.muted {
+  color: #888;
+  font-style: italic;
+}
+
+.submit-err {
+  color: #c62828;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+
+h5 {
+  font-size: 1rem;
+  color: #2e7d32;
+  margin-top: 8px;
+}
+.experience-block {
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #f8f9fa;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+}
+
+.add-exp-btn-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+}
+
+.btn.add {
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.add:hover {
+  background-color: #256528;
+}
+
+.btn.remove {
+  background-color: #b71c1c;
+  color: white;
+  padding: 7px 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.remove:hover {
+  background-color: #8a1414;
+}
+
+/* --- CHILDREN FIELD CONTAINER --- */
+.tag-input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* --- EXISTING TAG LIST --- */
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* --- STYLE FOR INDIVIDUAL TAG --- */
+.tag {
+  background: #eef2ff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #c7d2fe;
+}
+
+/* --- REMOVE BUTTON INSIDE TAG --- */
+.tag .remove-tag {
+  background: none;
+  border: none;
+  color: #444;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+/* --- ADD CHILD ROW (input + button) --- */
+.add-child-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+/* --- CHILD INPUT BOX --- */
+.add-child-row input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* --- ADD BUTTON --- */
+.add-child-row .add-btn {
+  padding: 8px 14px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-child-row .add-btn:hover {
+  background: #4338ca;
+}
+

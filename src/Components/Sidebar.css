@@ -1,0 +1,345 @@
+/* Layout */
+.sidebarlayout-layout {
+  display: flex;
+  font-family: Arial, sans-serif;
+  margin-top: 0px;
+}
+
+.sidebarlayout-hamburger {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1200;
+  background: #1f2937;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  font-size: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebarlayout-sidebar-inner {
+  width: 250px;
+  background-color: #1f2937;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  position: fixed; /* fixed sidebar */
+   height: 100vh;   /*full viewport height */
+  overflow-y: auto;
+  
+}
+
+.sidebarlayout-profile-section {
+  text-align: center;
+  padding: 20px 10px;
+  border-bottom: 1px solid #444;
+}
+
+.sidebarlayout-profile-section img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00bfff;
+  cursor: pointer;
+}
+
+.sidebarlayout-photo-menu {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sidebarlayout-photo-menu button {
+  font-size: 12px;
+  padding: 3px 5px;
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sidebarlayout-sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.sidebarlayout-sidebar-links li a {
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.sidebarlayout-sidebar-links li a:hover {
+  background-color: #007bff;
+}
+
+.sidebarlayout-sidebar-links li a:active {
+  background-color: #007bff;
+}
+
+.sidebarlayout-homeActive {
+  background-color: #007bff;
+  margin: 10px 20px;
+}
+
+.sidebarlayout-dashboardActive {
+  background-color: #007bff;
+  margin: 10px 20px;
+}
+
+.sidebarlayout-profileActive {
+  background-color: #007bff;
+  margin: 10px 20px;
+
+}
+
+.sidebarlayout-leaveActive {
+  background-color: #007bff;
+  margin: 10px 20px;
+}
+
+.sidebarlayout-homeInactive {
+  margin: 10px 20px;
+}
+
+.sidebarlayout-dashboardInactive {
+  margin: 10px 20px;
+}
+
+.sidebarlayout-profileInactive {
+  margin: 10px 20px;
+}
+
+.sidebarlayout-leaveInactive {
+  margin: 10px 20px;
+}
+
+/* ---------- Timesheet and Performance Tabs ---------- */
+.sidebarlayout-timesheetActive,
+.sidebarlayout-performanceActive {
+  background-color: #007bff;
+  margin: 10px 20px;
+  color: #fff;
+}
+
+.sidebarlayout-timesheetInactive,
+.sidebarlayout-performanceInactive {
+  margin: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hover effect matches others */
+.sidebarlayout-timesheetInactive:hover,
+.sidebarlayout-performanceInactive:hover {
+  background-color: #007bff;
+}
+
+/* Logout button */
+.sidebarlayout-logout-button {
+  padding: 20px;
+  margin-top: auto;
+}
+
+.sidebarlayout-logout-button button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff4d4d;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Main content */
+.sidebarlayout-content {
+  margin-left: 220px;  /* space for sidebar */
+  padding: 20px;
+  width: calc(100% - 220px);
+  min-height: 100vh;
+  overflow-y: auto;    /* scrollable content only */
+}
+
+/* ---------- Username Edit Styling ---------- */
+.sidebarlayout-username-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+/* Name display with Edit button */
+.sidebarlayout-name-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebarlayout-name-display button{
+  margin: 0%;
+}
+
+.sidebarlayout-name-display p {
+  padding-left: 40px;
+}
+
+.sidebarlayout-edit-name-btn {
+  font-size: 12px;
+  padding: 3px 6px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Edit name input + buttons */
+.sidebarlayout-edit-name-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.sidebarlayout-edit-name-box input {
+  width: 30%;
+  padding: 5px 8px;
+  border-radius: 4px;
+  justify-items: center;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: -25px;
+}
+
+/* ---------- Photo + Name Container ---------- */
+.sidebarlayout-photo-name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* for photo-menu positioning */
+}
+
+/* Photo wrapper for menu positioning */
+.sidebarlayout-photo-wrapper {
+  position: relative;
+}
+
+/* Photo menu buttons alignment */
+.sidebarlayout-photo-menu button {
+  width: 100px; 
+  padding: 5px;
+  text-align: center;
+  margin: 0%;
+}
+
+/* Username edit buttons in one row */
+.sidebarlayout-name-buttons {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.sidebarlayout-name-buttons button {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.sidebarlayout-name-buttons button:first-child {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.sidebarlayout-name-buttons button:last-child {
+  background-color: #ff4d4d;
+  color: #fff;
+}
+
+/* Input field width fixed */
+.sidebarlayout-edit-name-box input {
+  width: 100px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebarlayout-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .sidebarlayout-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Mobile Drawer Mode */
+@media (max-width: 900px) {
+  .sidebarlayout-hamburger {
+    display: block;
+  }
+
+  .sidebarlayout-sidebar-inner {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 250px;
+    height: 100vh;
+    background: #1f2937;
+    transition: left 0.3s ease;
+    z-index: 1500;
+  }
+
+  .sidebarlayout-sidebar-inner.sidebar-open {
+    left: 0;
+  }
+
+  /* Overlay behind drawer */
+  .sidebarlayout-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 1400;
+  }
+
+  /* Content should shift */
+  .sidebarlayout-content {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebarlayout-sidebar-inner {
+    width: 220px;
+  }
+}

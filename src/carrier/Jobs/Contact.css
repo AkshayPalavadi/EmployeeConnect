@@ -1,0 +1,322 @@
+/* === GENERAL PAGE STYLING === */
+.contact-page {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background-color: #ffffff;
+}
+
+/* === TOP SECTION === */
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 8%;
+  gap: 40px;
+}
+
+/* === LEFT SIDE === */
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-heading {
+  color: #1f8b37;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.contact-description {
+  color: #6b6b6b;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.contact-icon {
+  color: #60776d;
+  font-size: 22px;
+  margin-top: 3px;
+}
+
+.contact-item h4 {
+  color: #222;
+  font-size: 16px;
+  margin: 0;
+}
+
+.contact-item p {
+  color: #666;
+  font-size: 14px;
+  margin: 3px 0 0;
+}
+
+/* === RIGHT SIDE FORM === */
+.contact-form-box {
+  flex: 1;
+  min-width: 330px;
+  background: #f8f9fb;
+  border-radius: 12px;
+  padding: 35px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.contact-form-box h3 {
+  color: #222;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #22b573;
+  box-shadow: 0 0 5px rgba(34, 181, 115, 0.3);
+}
+
+.contact-form button {
+  background-color: #219427;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #1c9a61;
+}
+
+/* === MAP === */
+.contact-map {
+  margin-top: 0;
+  width: 100%;
+  /* margin-left: 620px; */
+  margin-bottom: 10px;
+   display: flex;
+   align-items: center;
+   padding: 0px 20px;
+}
+
+.office {
+    flex: 1;
+  margin-bottom: 5px;
+  /* margin-left: -620px; */
+  font-size: 18px;
+ 
+}
+
+.office h4 {
+    color: #159736;
+    margin-top: -150px;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.map{
+    flex: 2;
+    margin-left: 50px;
+}
+
+/* .contact-map iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  display: block;
+} */
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+  .contact-section {
+    flex-direction: column;
+    padding: 50px 6%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .contact-form-box {
+    padding: 25px;
+  }
+
+  .contact-heading {
+    font-size: 26px;
+  }
+}
+/* ==== FOOTER STYLING ==== */
+.footer-contact{
+  background-color: #ffffff;
+  /* color: #ffffff; */
+  padding: 60px 8% 30px;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container-contact {
+  display: flex;
+  /* justify-content: space-between;
+  align-items: center; */
+  flex-wrap: wrap; 
+  /* gap: 40px; */
+}
+
+.footer-column-contact {
+  flex: 1;
+  min-width: 240px;
+  color: black;
+  margin-left: 40px;
+}
+.footer-column-contact-company{
+  flex: 1;
+  min-width: 240px;
+  color: black;
+  margin-left: 50px;
+  /* margin-top: 10px; */
+  margin-bottom: 20px;
+}
+.footer-column-contact-legal{
+  flex: 1;
+  min-width: 240px;
+  color: black;
+}
+.footer-column-contact h3,
+.footer-column-contact h4 {
+  color: #22b573;
+  margin-bottom: 15px;
+}
+
+/* .footer-column-contact {
+  color: #131212;
+  line-height: 1.6;
+  font-size: 14px;
+} */
+
+.footer-column-contact-company ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.footer-column-contact-company ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column-contact-company ul li a {
+  text-decoration: none;
+  color:black;
+  transition: color 0.3s;
+  /* margin-right: 50px; */
+  margin-left: 50px;
+}
+
+.footer-column-contact-company ul li a:hover {
+  color: #22b573;
+}
+
+/* ==== SOCIAL ICONS ==== */
+.footer-social-contact {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  /* background-color: red; */
+}
+
+.footer-social-contact a  {
+  /* color: #22b573; */
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.footer-social-contact a:hover {
+  color: #ffffff;
+}
+
+/* ==== BOTTOM COPYRIGHT ==== */
+.footer-bottom-contact {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* ==== RESPONSIVE FOOTER ==== */
+@media (max-width: 768px) {
+  .footer-contact {
+    padding: 50px 6% 25px;
+  }
+
+  .footer-container-contact {
+    /* display: flex; */
+    flex-direction: column;
+  }
+/* 
+  .footer-column-contact {
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom-contact {
+    font-size: 13px;
+
+  } */
+}
+.Dhatvi-heading{
+  color: #22b573;
+  margin-top: 23px;
+}
+
+.footer-links-contact {
+  color: black;
+  text-decoration: none;
+  font: 16px poppins,sans-serif;
+  flex-direction: column;
+  margin-left: 80px;
+}

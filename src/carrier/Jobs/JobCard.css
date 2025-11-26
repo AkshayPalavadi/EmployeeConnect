@@ -1,0 +1,103 @@
+.job-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.job-card h2 {
+  margin: 0 0 8px 0;
+}
+
+.job-details {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.details-btn {
+  background-color: #25755d;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.job-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-card h2 {
+  font-size: 20px;
+  color: #333;
+}
+
+.job-details {
+  margin: 10px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.details-btn {
+  background-color: #31835d;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.details-btn:hover {
+  background-color: #38793d;
+}
+
+/* --- Save button styles --- */
+.save-btn {
+  background: #b3b8b3;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.save-btn:hover {
+  background: #36ca8c;
+  color: rgb(232, 238, 234);
+  border-color: #337733;
+}
+
+.save-icon,
+.saved-icon {
+  font-size: 16px;
+}
+
+.saved-icon {
+  color: #31865c;
+}
+
+
+
+

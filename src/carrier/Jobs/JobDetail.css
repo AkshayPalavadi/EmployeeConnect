@@ -1,0 +1,248 @@
+.job-detail-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* Sidebar */
+.sidebar-jd {
+  flex: 1;
+  background-color: #f8fef9;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+}
+
+.sidebar h2 {
+  color: #36a044;
+  border-bottom: 2px solid #36a044;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.overview-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.icon {
+  color: #36a044;
+  font-size: 20px;
+}
+
+.label {
+  font-size: 14px;
+  color: #666;
+}
+
+.value {
+  font-weight: 600;
+  color: #333;
+}
+
+.map-box {
+  margin-top: 20px;
+}
+
+/* Main Content */
+.main-content {
+  flex: 2;
+  background-color: #fff;
+  padding: 25px 0px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Section */
+.header-section-jd {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.job-header h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.experience {
+  color: #36a044;
+  font-weight: 500;
+}
+
+.job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.job-tags span {
+  background: #f0fdf4;
+  color: #36a044;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* Apply Button */
+.apply-btn {
+
+    background-color: #28a745;
+      color: #fff;
+  border: none;
+  padding: 18px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  margin-top: 20px;
+}
+
+.apply-btn:hover {
+  background-color: #2e8939;
+}
+
+/* Job Sections */
+.job-section {
+  margin-top: 25px;
+  
+}
+
+.job-section h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.job-section p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.job-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.job-section ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.job-section ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #36a044;
+  font-weight: bold;
+}
+.send-message-form {
+  margin-top: 30px;
+}
+
+.send-message-form h3 {
+  color: #36a044;
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 2px solid #36a044;
+  padding-bottom: 6px;
+}
+
+.send-message-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.send-message-form input,
+.send-message-form textarea {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  resize: none;
+}
+
+.send-btn {
+  background-color: #36a044;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.send-btn:hover {
+  background-color: #2e8939;
+}
+
+
+.skills-row {
+  font-weight: 500;
+  line-height: 1.6;
+  word-break: keep-all;
+  display: inline-block; /* keeps items on same line until wrap is needed */
+}
+
+.skill { white-space: nowrap; }
+
+.sep {
+  color: #6b7280; /* subtle separator color */
+}
+
+/* small screens: allow wrapping with comfortable spacing */
+@media (max-width: 480px) {
+  .skills-row { display: block; }
+  .skill { display: inline-block; margin-right: 6px; margin-bottom: 6px; }
+}
+
+.header-actions .save-btn {
+  background-color: #2EBD6E;
+  color: #fff;
+  border: none;
+  padding: 6px 12px; /* FIXED */
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px Anal;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  margin-top: 15px;
+  margin-left: 2px;
+  
+  width: 140px; 
+  text-align: center;
+
+  display: flex;             /* center content */
+  justify-content: center;   /* horizontally center */
+  align-items: center;       /* vertically center */
+  gap: 3px;
+   
+  /* margin-right: 50px;                 icon + text spacing */
+}
+
+.save-btn:hover {
+  background-color: #2e8939;
+ }
+
+ 
+.apply-by {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0;
+}

@@ -1,0 +1,505 @@
+/* ==============================
+   GLOBAL PAGE STYLING
+============================== */
+.employeeleaves-leaves-page {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #e8f0ff, #f7faff);
+  min-height: 100vh;
+  padding: 30px 20px;
+  animation: fadeInUp 0.6s ease;
+}
+
+/* ==============================
+   TABS SECTION
+============================== */
+.employeeleaves-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+/* ==============================
+   UPDATED COMPOFF INLINE STYLING
+============================== */
+
+.compoff-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.compoff-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: #f1f6ff;
+  border: 1px solid #cdd8f7;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+}
+
+.compoff-item input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #007bff;
+  margin: 0;
+}
+
+.employeeleaves-tabs .tab {
+  padding: 10px 25px;
+  width: 300px;
+  background: #e4e8ee;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  font-size: larger;
+  transition: all 0.3s ease;
+}
+
+.employeeleaves-tabs .tab:hover {
+  background: #d1d7e0;
+}
+
+.employeeleaves-tabs .tab.active {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   FORM BOX
+============================== */
+.employeeleaves-form-box {
+  background: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 35px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.employeeleaves-form-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.15);
+}
+
+.employeeleaves-form-box h2 {
+  text-align: center;
+  color: #222;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* ==============================
+   FORM ELEMENTS
+============================== */
+.employeeleaves-form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make From and To date inline */
+.employeeleaves-date-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.employeeleaves-date-row .employeeleaves-form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.employeeleaves-form-group label {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* Two-column layout */
+.employeeleaves-two-column {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Left side - Leave Balance */
+.employeeleaves-left-column {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+/* Right side - Form Fields */
+.employeeleaves-right-column {
+  flex: 2;
+  min-width: 320px;
+}
+
+/* Section titles (using data-title attr) */
+.employeeleaves-left-column::before,
+.employeeleaves-right-column::before {
+  content: attr(data-title);
+  display: block;
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 12px;
+  color: #007bff;
+  border-left: 4px solid #007bff;
+  padding-left: 8px;
+}
+
+/* Make both boxes look clean and aligned */
+.employeeleaves-leave-breakdown-box {
+  background: linear-gradient(145deg, #f0f6ff, #ffffff);
+  border: 1px solid #dce6ff;
+  border-radius: 10px;
+  padding: 15px;
+  color: #333;
+  font-size: 15px;
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.08);
+  height: fit-content;
+}
+
+/* Input styling */
+.employeeleaves-form-group input,
+.employeeleaves-form-group select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+  font-size: 15px;
+}
+
+/* Focus glow */
+.employeeleaves-form-group input:focus,
+.employeeleaves-form-group select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* ==============================
+   RIGHT COLUMN UNIFORM FIELDS
+============================== */
+.employeeleaves-right-column .employeeleaves-form-group {
+  width: 100%;
+}
+
+.employeeleaves-right-column input,
+.employeeleaves-right-column select,
+.employeeleaves-right-column textarea {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.employeeleaves-right-column input[type="file"] {
+  background: #fff;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.employeeleaves-right-column label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.employeeleaves-right-column input:focus,
+.employeeleaves-right-column select:focus,
+.employeeleaves-right-column textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.25);
+}
+
+.employeeleaves-right-column .employeeleaves-form-group + .employeeleaves-form-group {
+  margin-top: 18px;
+}
+
+/* Uniform sizing fix */
+.employeeleaves-right-column .employeeleaves-form-group input[type="text"],
+.employeeleaves-right-column .employeeleaves-form-group select,
+.employeeleaves-right-column .employeeleaves-form-group input[type="file"],
+.employeeleaves-right-column .employeeleaves-form-group textarea {
+  width: 100% !important;
+  height: 45px !important;
+  display: block;
+  box-sizing: border-box;
+}
+
+.employeeleaves-right-column textarea {
+  resize: none;
+  height: 100px !important;
+}
+
+/* ==============================
+   CUSTOM DATE RANGE
+============================== */
+.employeeleaves-custom-date-range {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8faff;
+  padding: 15px;
+  border: 1px solid #cce0ff;
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.employeeleaves-custom-date-range input[type="date"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+.employeeleaves-custom-date-range input[type="date"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+/* Fade animation for date range */
+.employeeleaves-custom-date-range {
+  opacity: 0;
+  transform: translateY(-10px);
+  max-height: 0;
+  overflow: hidden;
+}
+
+.employeeleaves-custom-date-range.active {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 200px;
+  overflow: visible;
+  transition: all 0.4s ease;
+}
+
+
+.custom-dropdown {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  min-height: 40px;  /* prevents shrinking */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.custom-dropdown-menu {
+  position: absolute;
+  width: 100%;              /* stay inside the card */
+  max-height: 300px;        /* avoid overflow */
+  max-width: 550px;
+  overflow-x: hidden;
+  overflow-y: auto;         /* scroll instead of expanding */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 4px;
+  z-index: 9999;            /* stays above card */
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+.custom-dropdown-search {
+  width: 95%;
+  padding: 8px;
+  margin: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Options style */
+.custom-dropdown-options {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.custom-dropdown-option {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.custom-dropdown-option:hover {
+  background: #f0f0f0;
+}
+
+.custom-dropdown-option.selected {
+  background: #d7f0ff;
+  font-weight: bold;
+}
+
+
+/* ==============================
+   CHECKBOX GROUPS
+============================== */
+.employeeleaves-checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 8px;
+}
+
+.employeeleaves-checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: #333;
+  background: #f8faff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #dce3f0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.employeeleaves-checkbox-group label:hover {
+  background-color: #e9f3ff;
+  border-color: #007bff;
+}
+
+.employeeleaves-checkbox-group input[type="checkbox"] {
+  accent-color: #007bff;
+  transform: scale(1.1);
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+.employeeleaves-submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.employeeleaves-submit-btn:hover {
+  background: linear-gradient(90deg, #0056b3, #004099);
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   POPUP STYLING
+============================== */
+.employeeleaves-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.employeeleaves-popup-box {
+  background: white;
+  border-radius: 12px;
+  padding: 25px 35px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.employeeleaves-popup-box h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.employeeleaves-popup-box p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Popup buttons */
+.employeeleaves-popup-box button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.employeeleaves-popup-box button:hover {
+  background-color: #0056b3;
+}
+
+/* ==============================
+   ANIMATIONS
+============================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+@media (max-width: 768px) {
+  .employeeleaves-form-box {
+    padding: 25px;
+  }
+
+  .employeeleaves-custom-date-range {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .employeeleaves-custom-date-range input[type="date"] {
+    width: 100%;
+  }
+
+  .employeeleaves-two-column {
+    flex-direction: column;
+  }
+}

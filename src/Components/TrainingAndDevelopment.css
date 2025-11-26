@@ -1,0 +1,133 @@
+/* GRID LAYOUT FIXED */
+.td-container {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;   /* Updated ratio */
+  gap: 20px;
+  padding: 20px;
+  align-items: start;
+}
+
+/* LEFT COLUMN */
+.td-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* CARD BASE STYLE */
+.td-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.td-card-title {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* DETAILS CARD BEAUTIFUL STYLE */
+.td-details-card {
+  background: #fafcff;
+  border-left: 5px solid #007bff;
+}
+
+/* DETAILS GRID */
+.td-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 30px;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.td-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.td-detail-row:last-child {
+  border-bottom: none;
+}
+
+.td-label {
+  font-weight: 600;
+  color: #444;
+}
+
+.td-value {
+  color: #222;
+}
+
+/* LINE CHART HEIGHT */
+.td-line-chart {
+  height: 320px;
+}
+
+/* BAR GRAPH MATCH HEIGHT WITH BOTH LEFT CARDS */
+.td-bar-graph {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TABLE CARD */
+.td-table-card {
+  grid-column: 1 / span 2;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Table Styling */
+.td-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.td-table th,
+.td-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.td-table th {
+  background: #f4f6fa;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+}
+
+.td-table td {
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+.td-table tr:hover {
+  background-color: #f0f7ff;
+}
+
+.td-table td:last-child {
+  text-align: center; /* For rating column */
+}
+
+.td-table th:last-child {
+  text-align: center;
+}
+
+/* Responsive scroll */
+@media (max-width: 768px) {
+  .td-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

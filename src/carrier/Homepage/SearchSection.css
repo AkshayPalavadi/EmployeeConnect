@@ -1,0 +1,77 @@
+ .search-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+  gap: 10px;
+  width: 300px;
+  margin-left: 200px;
+  /* border-radius: 30px; */
+}
+
+.search-label {
+    display: flex;
+    width: 60vw;
+    margin: auto;  
+}
+
+.search-label input {
+  padding: 8px;
+  font-size: 16px;
+  flex: 1;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.search-btn {
+  background-color: #007bff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: white;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+select {
+  padding: 8px;
+}
+
+.search-skills {
+  margin-left: 10px;
+}
+.jobs-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid #ddd;
+  background: white;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+  width: 150%;
+}
+
+.job-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.job-item:hover {
+  background-color: #f2f2f2;
+}
+
+.apply-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 14px;
+}

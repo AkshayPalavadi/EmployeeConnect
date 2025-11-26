@@ -1,0 +1,101 @@
+.employeehistory-history-container {
+  margin-top: 20px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.employeehistory-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  text-align: center;
+  table-layout: fixed;
+}
+
+.employeehistory-history-table th {
+  background: #2a6592;
+  color: white;
+  padding: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.employeehistory-history-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word; 
+}
+
+.employeehistory-history-table tr:hover {
+  background: #f8f9ff;
+  transition: 0.2s;
+}
+
+.employeehistory-status-badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.employeehistory-status-badge.employeehistory-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+.employeehistory-status-badge.employeehistory-approved {
+  background: #d4edda;
+  color: #155724;
+}
+.employeehistory-status-badge.employeehistory-rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Delete button */
+
+.employeehistory-delete-btn {
+  padding: 6px 12px;
+  padding-bottom: 50px;
+  border: none;
+  border-radius: 6px;
+  background: #fdfbfb;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.employeehistory-delete-btn:hover {
+  background: #fcfbfb;
+}
+.employeehistory-delete-btn.employeehistory-disabled-btn {
+  background: gray;
+  cursor: not-allowed;
+}
+/* Disabled delete button */
+.employeehistory-delete-btn:disabled {
+  /* background: gray; */
+  cursor: not-allowed;
+}
+
+.employeehistory-delete-btn:disabled:hover {
+  background: rgb(248, 247, 247); 
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .employeehistory-history-table th,
+  .employeehistory-history-table td {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .employeehistory-status-badge {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}

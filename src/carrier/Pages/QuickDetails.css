@@ -1,0 +1,552 @@
+.quick-details-container {
+  
+  /* margin: 40px auto; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.quick-details-container-header {
+  display: flex;
+  /* margin-bottom: 30px; */
+  
+  
+}
+
+.error {
+  color: rgb(247, 35, 35);
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+
+.logo {
+  width: 150px;
+  height: 150px;
+  /* display: block; */
+  /* margin: 0 auto 10px; */
+  margin-left: 0px;
+  /* background: #000; */
+}
+
+.dhatvi-text{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.green-line{
+    width: auto;
+}
+/* .quick-details-container .logo-text {
+  /* text-align: center; */
+  /* background: #000; */
+  /* margin-left: 10px; */
+
+
+.quick-details-title {
+    font-weight: bolder;
+    font-size: 32px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  /* margin: 0 auto; */
+  margin-bottom: 20px;
+}
+
+/* h2{
+  font-size: 28px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+} */
+
+.details-form{
+    width: 43%;
+    margin: 0 auto;
+    row-gap: 10px;
+}
+
+
+.details-form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  margin-top: 20px;
+  color: #333;
+  
+}
+
+.details-form input,
+.details-form select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1.5px solid #277a24;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  
+}
+.name-row {
+  display: flex;
+  gap: 40px;
+width:610px
+}
+
+/* Main container for CGPA/Percentage like Employee Type */
+.grade-row {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  
+}
+
+.grade-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid #277c1f;
+  border-radius: 25px;
+  padding: 6px 20px;
+  cursor: pointer;
+    font-weight: 600;}
+
+.grade-option label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid #277c1f;
+  border-radius: 25px;
+  padding: 8px 20px;
+  cursor: pointer;
+  
+}
+
+.grade-option input[type="radio"] {
+  accent-color: #000000;
+}
+
+  .email-row {
+    width: 545px;
+}
+
+.phone-row {
+  display: flex;
+  gap: 15px;
+  width:610px
+
+}
+.highest-qualification-course-row{
+  width: 545px;
+  gap: 15px;
+}
+.course-field{
+  width: 570px;
+  gap: 15px;
+}
+
+.course-qd{
+  background-color: white;
+}
+
+.course-enter-qd {
+  margin-top: 10px;
+  width: 545px;
+  gap: 15px;
+}
+
+
+
+.department-qd {
+  width: 545px;
+  gap: 15px;
+}
+
+.college-qd {
+  width: 545px;
+  gap: 15px;
+}
+
+
+.year-of-passing {
+  width: 570px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.college-name {
+  gap: 15px;
+  width: 545px;
+  margin-bottom: 15px;
+    
+}
+/* Grade Label Formatting */
+.grade-radio-group {
+  display: flex;
+  gap: 60px;
+}
+
+/* Radio styling like Employee Type */
+.grade-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.grade-option input[type="radio"] {
+  width: 13px;
+  height: 13px;
+}
+
+/* Input box appears below */
+.grade-input {
+  width: 250px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.grade-input label{
+   display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid #277c1f;
+  border-radius: 25px;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+
+
+
+.employee-type {
+  display: flex;
+  gap: 50px;
+  margin-top: -5px;
+}
+
+.employee-type label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid #277c1f;
+  border-radius: 25px;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+.employee-type input {
+  accent-color: #000000;
+}
+
+.submit-btn {
+  margin-top: 30px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background-color: hsl(125, 31%, 41%);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: auto;
+
+  /* Align to the right */
+  display: block;
+  margin-left: 160px;
+  width:200px
+}
+
+.submit-btn:hover {
+  background-color: #104e1e;
+  color: #ccc;
+  
+}
+.email-error {
+  color: rgb(241, 57, 57);
+  font-size: 14px;
+  margin-top: 5px;
+  background: #ffe6e6;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-left: 4px solid rgb(238, 53, 53);
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.current-company-input{
+  width: 545px;
+}
+
+.experience-years {
+  width: 545px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.experience-section {
+  margin-top: 15px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.experience-section label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+  
+}
+
+.experience-section input,
+.experience-section select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+    border: 1.5px solid #227922;
+
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.resume-upload {
+  margin-top: 20px;
+
+}
+
+.resume-upload label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+.resume-upload-error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+
+.resume-upload input[type="file"] {
+  width: 545px;
+  padding: 8px 12px;
+  border: 1.5px solid #227922;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.skills-qd{
+  margin-top: 4px;
+  
+}
+.skills-section {
+  margin-top: 20px;
+}
+
+.skills-section label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+  
+}
+
+.skills-section input {
+  width: 545px;
+  padding: 10px 15px;
+  border: 1.5px solid #227922;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+}
+
+.skills-section {
+  margin-top: 20px;
+  
+}
+
+.skill-input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.skill-input-row input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #c7c7c7;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.skill-input-row button {
+  padding: 10px 15px;
+  background-color: #1ca350;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 15px;
+}
+
+.skill-input-row button:hover {
+  background-color: #178c44;
+}
+
+/* ---- Skill Chips ---- */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; 
+}
+
+.skill-chip {
+  background-color: #e8f7ee;
+  border: 1px solid #b6e2c7;
+  padding: 6px 10px;
+  border-radius: 10px;
+  align-items: center;
+  font-size: 14px;
+  margin-right: 5px;
+  height: 15px;
+}
+
+.skill-chip button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #d9534f;
+  padding: 0;
+  
+  
+}
+
+.skill-chip button:hover {
+  color: #b63e3b;
+}
+
+.required-label::after {
+  content: " *";
+  color: red;
+  font-weight: normal;
+}
+
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .details-form {
+    width: 70%;
+  }
+
+  .name-row,
+  .phone-row,
+  .grade-row,
+  .highest-qualification-course-row,
+  .course-field,
+  .college-qd,
+  .department-qd,
+  .college-name,
+  .year-of-passing,
+  .current-company-input,
+  .experience-years {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .submit-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .grade-radio-group,
+  .employee-type {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .details-form {
+    width: 90%;
+  }
+
+  .quick-details-title {
+    font-size: 26px;
+  }
+
+  .dhatvi-text {
+    font-size: 24px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .name-row,
+  .phone-row,
+  .grade-row,
+  .highest-qualification-course-row,
+  .course-field,
+  .college-qd,
+  .department-qd,
+  .college-name,
+  .year-of-passing,
+  .current-company-input,
+  .experience-years {
+    gap: 10px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .details-form {
+    width: 100%;
+  }
+
+  .quick-details-title {
+    font-size: 22px;
+  }
+
+  .dhatvi-text {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .grade-option,
+  .employee-type label {
+    padding: 6px 12px;
+  }
+
+  .skill-input-row {
+    flex-direction: column;
+  }
+
+  .skill-input-row input,
+  .skill-input-row button {
+    width: 100%;
+  }
+}

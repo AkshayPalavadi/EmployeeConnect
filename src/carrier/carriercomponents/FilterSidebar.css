@@ -1,0 +1,76 @@
+.sidebar-fs {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  width: 260px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.filter-section-fs {
+  margin-bottom: 20px;
+}
+
+.filter-section-fs h3 {
+  color: #2c7a36;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.filter-icon-fs {
+  color: #065717;
+}
+
+.slider {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.search-input-fs,
+.dropdown-fs {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.clear-btn-fs {
+  margin-top: 50px;
+  background-color: #df4a4a;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.clear-btn-fs:hover {
+  background-color: #cc3131;
+  transform: translateY(-2px);
+}
+
+.react-select-location .css-13cymwt-control {
+  border-color: #ccc;
+  min-height: 38px;
+}
+
+.react-select-location .css-1nmdiq5-menu {
+  z-index: 9999;
+}

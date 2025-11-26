@@ -1,0 +1,126 @@
+.form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Inter", sans-serif;
+  max-width: 800px;
+  margin: auto;
+}
+
+h2 {
+  color: #2e7d32;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #2e7d32;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  padding-right: 100px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+button.add-btn,
+button.remove-btn {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+button.remove-btn {
+  background-color: #c62828;
+  margin-top: 10px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+/* ===============================
+   Checkbox Field Styling
+   =============================== */
+.field.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #243946;
+}
+
+/* Make sure checkbox aligns perfectly with text */
+.field.checkbox-field input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #007bff; /* modern browsers – blue tint */
+  cursor: pointer;
+  transform: translateY(1px);
+}
+
+/* Label hover feedback */
+.field.checkbox-field label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Optional: Add small transition on hover */
+.field.checkbox-field input[type="checkbox"]:hover {
+  filter: brightness(1.1);
+}
+
+/* Consistent spacing in forms */
+.form-wrap .checkbox-field + .experience-block {
+  margin-top: 10px;
+}
+

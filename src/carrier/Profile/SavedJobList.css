@@ -1,0 +1,104 @@
+.saved-job-container {
+  width: 90%;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  border: 2px solid #000; 
+}
+
+.saved-job-title {
+  text-align: center;
+  color: #1b8a47; 
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.saved-job-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  background-color: #ffffff;
+  border: 2px solid #000;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+
+.saved-job-table th {
+  background-color: #1b8a47; 
+  color: #000; 
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 12px 15px;
+  border-bottom: 2px solid #000; 
+  letter-spacing: 0.5px;
+  font-size: 15px;
+}
+
+.saved-job-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ccc;
+  font-size: 15px;
+  color: #222;
+}
+
+.saved-job-table tr:last-child td {
+  border-bottom: none; 
+}
+
+.saved-job-table tr:nth-child(even) {
+  background-color: #f8fdf8;
+}
+
+.saved-job-table tr:hover {
+  background-color: #e6f5ea;
+  transition: background-color 0.3s ease;
+}
+
+.action-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.delete-icon {
+  color: #e63946;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.delete-icon:hover {
+  color: #ff0000;
+  transform: scale(1.2);
+}
+
+.view-icon {
+  color: #1b8a47;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.view-icon:hover {
+  color: #2ebd6e;
+  transform: scale(1.2);
+}
+
+
+.apply-btn {
+  background-color: #2ebd6e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.apply-btn:hover {
+  background-color: #239b58;
+}

@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  /* box-shadow: 0 2px 5px rgba(49, 38, 38, 0.1); */
+}
+
+.dhatvi-text{
+  color: black;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+  color: #0a9f72;
+  width: 100px;
+  height: auto;
+}
+
+.nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.login-btn {
+  background-color: #13ad41;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.green-line-job {
+  width: 94%; /* line matches the width of DhaTvi text */
+  height: 2px;
+  background-color: #00995e;
+  margin: 2px 0;
+
+  
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-home-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* space between icon and text */
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}
+
+.home-icon {
+  font-size: 18px;
+}

@@ -1,0 +1,188 @@
+.reviews-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  transition: all 0.3s ease;
+}
+
+.reviews-container.locked {
+  opacity: 0.8;
+}
+
+.reviews-container h4 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.reviews-rating-stars {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.reviews-rating-stars span {
+  transition: color 0.3s;
+}
+
+.reviews-rating-stars span:hover {
+  color: #ff9800;
+}
+
+.reviews-rating-stars.locked span {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: default !important;
+}
+
+/* Common chat bubble styles */
+.reviews-comment-chat-bubble {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  position: relative;
+  word-wrap: break-word;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  animation-duration: 0.35s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+/* Employee messages (right aligned) */
+.reviews-comment-chat-bubble.right {
+  align-self: flex-end;
+  background: #dcf8c6;
+  color: #222;
+  border-top-right-radius: 0;
+  margin-left: auto;
+  animation-name: slideInRight;
+}
+
+/* Manager messages (left aligned) */
+.reviews-comment-chat-bubble.left {
+  align-self: flex-start;
+  background: #f1f0f0;
+  color: #222;
+  border-top-left-radius: 0;
+  margin-right: auto;
+  animation-name: slideInLeft;
+}
+
+/* Slide-in animations */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Footer inside chat bubbles */
+.reviews-comment-chat-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  margin-top: 4px;
+  color: #777;
+}
+
+.reviews-comment-chat-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.reviews-comment-chat-buttons button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.reviews-comment-chat-buttons button:hover {
+  color: #000;
+}
+
+/* Input area */
+.reviews-chat-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.reviews-chat-input-container input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+.reviews-chat-input-container input:focus {
+  border-color: #007bff;
+}
+
+.reviews-chat-input-container button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.reviews-chat-input-container button:hover {
+  background: #0056b3;
+}
+
+/* Edit section */
+.reviews-edit-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.reviews-edit-section input {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.reviews-edit-section button {
+  border: none;
+  background: #4caf50;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.reviews-edit-section button:hover {
+  background: #3e8e41;
+}

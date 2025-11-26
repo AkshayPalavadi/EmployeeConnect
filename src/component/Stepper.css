@@ -1,0 +1,11 @@
+/* Minimal styles — main look comes from App.css which already contains the main stepper rules.
+   These rules just ensure spacing in case App.css isn't loaded first. */
+.stepper { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.step { flex:1; position:relative; display:flex; flex-direction:column; align-items:center; }
+.circle { width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:lightgray; color:white; font-size:12px; margin-bottom:6px;
+margin-right: 20px; }
+.circle.active, .circle.current { background: #2e7d32; }
+.label { font-size:13px; color:#888; }
+.label.active-label, .label.current-label { color:#2e7d32; font-weight:600; }
+.line { position:absolute; top:10px; left:50%; width:100%; height:3px; background:#ddd; z-index:0; }
+.line.filled { background:#2e7d32; }

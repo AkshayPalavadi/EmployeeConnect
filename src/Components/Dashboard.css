@@ -1,0 +1,380 @@
+/* =============================
+   GLOBAL PAGE STYLING
+============================= */
+.employeedashboard-dashboard {
+  padding: 25px;
+  background: #f4f8ff;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.employeedashboard-dashboard h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+/* =============================
+   GRID LAYOUT
+============================= */
+
+.employeedashboard-grid {
+  display: flex;
+  gap: 20px;
+}
+
+/* Left Column */
+.employeedashboard-left {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Right Column (Achievements Tall) */
+.employeedashboard-achievements-tall {
+  flex: 1.5;
+  background: linear-gradient(135deg, #dfe7ff, #f1f4ff);
+  padding: 20px;
+  border-radius: 22px;
+  height: 450px; /* Match profile card height */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.employeedashboard-achievements-tall:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+.employeedashboard-achievements-tall h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #1e3a8a;
+}
+
+/* =============================
+   KPI CARDS
+============================= */
+
+.employeedashboard-kpi-row {
+  display: flex;
+  gap: 20px;
+}
+
+.employeedashboard-kpi-card {
+  flex: 1;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  padding: 15px;
+  border-radius: 22px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  transition: 0.2s ease;
+}
+
+.employeedashboard-kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.employeedashboard-kpi-card h3 {
+  font-size: 20px;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+/* =============================
+   PROFILE CARD
+============================= */
+
+.employeedashboard-profile-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 22px;
+  height: 250px; /* Fixed so Achievements matches */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.employeedashboard-profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Profile Tabs */
+.employeedashboard-profile-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.employeedashboard-profile-tabs button {
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: none;
+  background: #e3f2fd;
+  color: #0d47a1;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.employeedashboard-profile-tabs button.emp-profile-active {
+  background: #0d47a1;
+  color: #fff;
+}
+
+.employeedashboard-profile-tabs button.emp-profile-inactive {
+  background: #fff;
+  color: #0d47a1;
+}
+
+/* Profile Content Scroll */
+.employeedashboard-profile-content {
+  overflow-y: auto;
+  padding-right: 8px;
+  height: 100%;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+}
+
+.profile-grid .full {
+  grid-column: span 2;
+}
+
+/* =============================
+   TABS INSIDE ACHIEVEMENTS
+============================= */
+
+.employeedashboard-achievement-tabs {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.employeedashboard-achievement-tabs button {
+  padding: 8px 14px;
+  border-radius: 16px;
+  border: none;
+  background: #e8eaf6;
+  color: #283593;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.employeedashboard-achievement-tabs button.emp-achievements-active {
+  background: #3f51b5;
+  color: white;
+}
+
+.employeedashboard-achievement-tabs button.emp-achievements-inactive {
+  background: white;
+  color: #3f51b5;
+}
+
+/* Scroll area inside achievements */
+.achievements-list {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.achievements-list li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* ACHIEVEMENT INNER ITEMS */
+.achievement-item {
+  background: #ffffff;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-radius: 16px;
+  border: 1px solid #e3e9ff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+  transition: 0.2s ease;
+}
+
+.achievement-item:hover {
+  transform: translateY(-3px);
+  background: #f5f7ff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+/* =============================
+   SCROLLBAR STYLING
+============================= */
+
+.employeedashboard-profile-content::-webkit-scrollbar,
+.achievements-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.employeedashboard-profile-content::-webkit-scrollbar-thumb,
+.achievements-list::-webkit-scrollbar-thumb {
+  background: #90caf9;
+  border-radius: 10px;
+}
+
+/* =============================
+   CHART CARDS
+============================= */
+
+/* Row containing charts/projects */
+
+/* Row containing charts/projects */
+.employeedashboard-charts-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.employeedashboard-chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Individual chart/project card */
+.employeedashboard-chart-card {
+  flex: 1 1 48%;          /* approx half width minus gap */
+  min-width: 300px;       /* prevents too small cards */
+  background: #fff;
+  padding: 20px;
+  border-radius: 22px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+.employeedashboard-chart-card h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #1e3a8a;
+}
+
+.employeedashboard-chart-card.wide {
+  flex: 1 1 300px;     /* grow/shrink, min width 300px */
+  min-width: 300px;    /* ensures cards don’t get too small */
+}
+
+/* CUSTOM TOOLTIP FOR TIMELINE */
+.employeedashboard-custom-tooltip {
+  background: #ffffff;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #dce3ff;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  font-size: 14px;
+  max-width: 260px;
+}
+
+.employeedashboard-custom-tooltip h4 {
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  color: #1a237e;
+}
+
+.employeedashboard-custom-tooltip ul {
+  padding-left: 18px;
+}
+
+.employeedashboard-custom-tooltip li {
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+/* =============================
+   PROJECT TABLE
+============================= */
+/* Responsive wrapper for table */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 10px;
+  background: white;
+}
+
+/* Smooth scrollbar for horizontal scroll */
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #c8d8f4;
+  border-radius: 10px;
+}
+
+/* Prevent table from breaking layout */
+.employeedashboard-projects-table {
+  width: 100%;
+  min-width: 800px;
+}
+
+.employeedashboard-projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.employeedashboard-projects-table th {
+  background: #e3e8ff;
+  padding: 12px;
+  color: #1a237e;
+  text-align: left;
+}
+
+.employeedashboard-projects-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eceffe;
+}
+
+/* Status badges */
+.employeedashboard-status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+}
+
+.employeedashboard-status-completed {
+  background: #00c49f;
+}
+
+.employeedashboard-status-inprogress {
+  background: #ff8042;
+}
+
+.employeedashboard-status-future {
+  background: #757575;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+
+/* Improve small screen readability */
+@media (max-width: 700px) {
+  .employeedashboard-projects-table th,
+  .employeedashboard-projects-table td {
+    white-space: nowrap;
+    padding: 10px 6px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .employeedashboard-grid {
+    flex-direction: column;
+  }
+}
