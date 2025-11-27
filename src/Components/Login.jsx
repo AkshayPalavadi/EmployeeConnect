@@ -149,7 +149,7 @@ localStorage.setItem("mustFillProfessionalDetails", result.mustFillProfessionalD
 
           <label>Select Role:</label>
           <select value={role} onChange={(e) => setRole(e.target.value)}>
-            <option value="employee">Employee</option>
+            <option value="Employee">Employee</option>
             <option value="admin">Admin</option>
           </select>
 
