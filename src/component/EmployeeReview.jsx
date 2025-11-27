@@ -42,7 +42,7 @@ export default function EmployeeReview() {
         }
 
         // Using Vite proxy → /api maps to your backend
-        const apiUrl = `/api/employee/${employeeEmail}`;
+        const apiUrl = `https://internal-website-rho.vercel.app/api/employee/${employeeEmail}`;
         console.log("🔗 Fetching employee details:", apiUrl);
 
         const res = await axios.get(apiUrl, {
