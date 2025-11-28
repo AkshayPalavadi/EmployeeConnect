@@ -316,24 +316,23 @@ export default function Dashboard() {
     };
 
     // placeholder KPI fetchers — keep but do not crash if endpoints are absent
-    const fetchKPIs = async () => {
-      try {
-        // Example placeholders; replace once you provide real endpoints
-        setAttendanceMonth(0);
-        setAttendanceFY(0);
-        setUsedLeaves(0);
-        setLeftLeaves(0);
-        setAssignedTasks(tasks.length);
-        setPendingTasks(0);
-      } catch (err) {
-        console.warn("KPI fetch error:", err);
-      }
-    };
+    // const fetchKPIs = async () => {
+    //   try {
+    //     setAttendanceMonth(0);
+    //     setAttendanceFY(0);
+    //     setUsedLeaves(0);
+    //     setLeftLeaves(0);
+    //     setAssignedTasks(tasks.length);
+    //     setPendingTasks(0);
+    //   } catch (err) {
+    //     console.warn("KPI fetch error:", err);
+    //   }
+    // };
 
     fetchProjects();
     fetchEmployee();
     fetchLeaveSummary();
-    fetchKPIs();
+    // fetchKPIs();
     fetchTasks();
   }, [employeeId]);
 

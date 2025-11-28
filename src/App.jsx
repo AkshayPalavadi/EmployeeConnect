@@ -110,7 +110,7 @@ useEffect(() => {
         <Route
           path="/employee"
           element={
-            isLoggedIn && userRole === "employee" ? (
+            isLoggedIn && userRole === "Employee" ? (
               <SidebarLayout
                 userName={userName}
                 setUserName={setUserName}
@@ -167,7 +167,7 @@ useEffect(() => {
   path="*"
   element={
     isLoggedIn
-      ? userRole === "admin"
+      ? userRole === "Admin"
         ? <Navigate to="/admin/dashboard" replace />
         : <Navigate to="/employee/home" replace />
       : <Navigate to="/login" replace />
