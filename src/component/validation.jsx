@@ -47,6 +47,9 @@ export const simpleValidatePersonal = (data) => {
   if (isEmpty(data.email)) errs.email = "Email is required";
   else if (!isEmail(data.email))
     errs.email = "Email must be valid (gmail/yahoo/outlook only)";
+  //dob
+    if (!data.dob || data.dob.trim() === "") errs.dob = "Date of Birth is required";
+
 
   // Phone
   if (isEmpty(data.phone)) errs.phone = "Phone number is required";

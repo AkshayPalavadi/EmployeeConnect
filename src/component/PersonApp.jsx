@@ -89,6 +89,7 @@ const submitAllData = async () => {
     lastName: "",
     fatherName: "",
     motherName: "",
+    dob:"",
     email: "",
     phone: "",
     alternativePhone: "",

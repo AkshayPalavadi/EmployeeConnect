@@ -19,6 +19,7 @@ export default function EmployeeDetails() {
     lastName: "",
     fatherName: "",
     motherName: "",
+    dob:"",
     email: "",
     phone: "",
     alternativePhone: "",

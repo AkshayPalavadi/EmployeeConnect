@@ -241,6 +241,11 @@ const removeChild = (index) => {
             <small className="err">{errors.motherName}</small>
           )}
         </div>
+          <div className="field">
+          <label>Date of Birth <span className="required-star">*</span></label>
+          <input type="date" name="dob" value={data.dob} onChange={handleChange} />
+          {errors.dob && <small className="err">{errors.dob}</small>}
+        </div>
         <div className="field">
           <label>
             Email <span className="required-star">*</span>
