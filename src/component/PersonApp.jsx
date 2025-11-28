@@ -23,7 +23,7 @@ function PersonApp({ setApplicationSubmitted }) {
     "Professional Details",
     "Review & Submit",
   ];
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0 );
   const [errors, setErrors] = useState({});
   const getStepName = () => {
     switch (currentStep) {
@@ -54,6 +54,28 @@ localStorage.setItem("mustFillProfessionalDetails", false);
   navigate(`/employee/profile/${officialEmail}`);
 };
 
+const submitAllData = async () => {
+  try {
+    // 1️⃣ Save personal
+    const personalSuccess = await savePersonal();
+    if (!personalSuccess) return false;
+
+    // 2️⃣ Save education
+    const educationSuccess = await saveEducation();
+    if (!educationSuccess) return false;
+
+    // 3️⃣ Save professional
+    const professionalSuccess = await saveProfessional();
+    if (!professionalSuccess) return false;
+
+    return true;
+  } catch (err) {
+    console.error("❌ Submit failed:", err);
+    return false;
+  }
+};
+
+
  
 
 
@@ -70,8 +92,6 @@ localStorage.setItem("mustFillProfessionalDetails", false);
     alternativePhone: "",
     gender: "",
     bloodGroup: "",
-    dob: "",
-    maritalStatus: "",
     isMarried: false,
     emergencyNumber: "",
     nominee1: "",
@@ -83,12 +103,16 @@ localStorage.setItem("mustFillProfessionalDetails", false);
     nominee2Phone:"",
     nominee2Percentage:"",
     currentAddress: "",
+    landmarkCurrent: "",
+    pincodeCurrent: "",
+    villageCurrent: "",
+    stateCurrent: "",
     permanentAddress: "",
+    landmarkPermanent: "",
+    pincodePermanent: "",
+    villagePermanent: "",
+    statePermanent: "",
     sameAddress: false,
-    landmark: "",
-    pincode: "",
-    village: "",
-    state: "",
     aadharNumber: "",
     panNumber: "",
     photo: null,
@@ -187,7 +211,7 @@ localStorage.setItem("mustFillProfessionalDetails", false);
     console.log("📤 Sending data to: /api/personal/save");
 
     const res = await axios.post(
-"/api/personal/save",
+"https://internal-website-rho.vercel.app/api/personal/save",
   formData,
   {
     headers: {
@@ -221,7 +245,7 @@ localStorage.setItem("mustFillProfessionalDetails", false);
 
       console.log("📤 Sending data to: /api/education/save");
       const res = await axios.post(
-"/api/education/save",
+"https://internal-website-rho.vercel.app/api/education/save",
   formData,
   {
     headers: {
@@ -255,7 +279,7 @@ localStorage.setItem("mustFillProfessionalDetails", false);
 
       console.log("📤 Sending data to: /api/professional/save");
       const res = await axios.post(
-"/api/professional/save",
+"https://internal-website-rho.vercel.app/api/professional/save",
   formData,
   {
     headers: {
@@ -358,7 +382,11 @@ localStorage.setItem("mustFillProfessionalDetails", false);
               professional={professional}
               setErrors={setErrors}
               prevStep={prevStep}
-              onSuccess={handleSuccess}
+              onSuccess={async () => {
+  const ok = await submitAllData();
+  if (ok) handleSuccess();
+}}
+
             />
           )}
         </section>

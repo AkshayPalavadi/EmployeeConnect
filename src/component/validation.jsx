@@ -36,9 +36,12 @@ export const simpleValidatePersonal = (data) => {
   if (isEmpty(data.motherName)) errs.motherName = "MotherName is required";
   else if (!namePattern.test(data.motherName))
     errs.village = "MotherName should contain only letters";
-   if (isEmpty(data.village)) errs.village = "Village is required";
-  else if (!namePattern.test(data.village))
-    errs.village = "Village should contain only letters";
+   if (isEmpty(data.villageCurrent)) errs.villageCurrent = "Current Address Village is required";
+  else if (!namePattern.test(data.villageCurrent))
+    errs.villageCurrent = "Current Address Village should contain only letters";
+  if (isEmpty(data.villagePermanent)) errs.villagePermanent = "Permanent Address Village is required";
+  else if (!namePattern.test(data.villagePermanent))
+    errs.villagePermanent = "Permanent Address Village should contain only letters";
 
   // Email
   if (isEmpty(data.email)) errs.email = "Email is required";
@@ -77,13 +80,20 @@ export const simpleValidatePersonal = (data) => {
     errs.currentAddress = "Current address is required";
   if (isEmpty(data.permanentAddress))
     errs.permanentAddress = "Permanent address is required";
-  if (isEmpty(data.landmark)) errs.landmark = "Landmark is required";
-  if (isEmpty(data.state)) errs.state = "State is required";
+  if (isEmpty(data.landmarkCurrent)) errs.landmarkCurrent = "Current Address Landmark is required";
+    if (isEmpty(data.landmarkPermanent)) errs.landmarkPermanent = "Permanent Address Landmark is required";
+
+  if (isEmpty(data.stateCurrent)) errs.stateCurrent = "Current Address State is required";
+    if (isEmpty(data.statePermanent)) errs.statePermanent = "Permanent Address State is required";
+
 
   // Pincode
-  if (isEmpty(data.pincode)) errs.pincode = "Pincode is required";
-  else if (!isPincode(data.pincode))
-    errs.pincode = "Enter valid 6-digit pincode";
+  if (isEmpty(data.pincodeCurrent)) errs.pincodeCurrent = "Current Address Pincode is required";
+  else if (!isPincode(data.pincodeCurrent))
+    errs.pincodeCurrent = "Enter valid 6-digit pincode";
+  if (isEmpty(data.pincodePermanent)) errs.pincodePermanent = "Permanent Address Pincode is required";
+  else if (!isPincode(data.pincodePermanent))
+    errs.pincodePermanent = "Enter valid 6-digit pincode";
 
   // Photo
   if (!data.photo) errs.photo = "Photo upload is required";

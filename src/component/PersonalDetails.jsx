@@ -87,7 +87,9 @@ const removeChild = (index) => {
       "nominee2",
       "nominee2Relation",
       "middleName",
-      "village",
+      "villageCurrent",
+      "villagePermanent",
+
       "spouse",
     ];
 
@@ -111,8 +113,17 @@ const removeChild = (index) => {
         ...prev,
         sameAddress: checked,
         permanentAddress: checked ? prev.currentAddress : "",
+        villagePermanent:checked ? prev.villageCurrent:"",
+        landmarkPermanent: checked ? prev.landmarkCurrent:"",
+        pincodePermanent: checked ? prev.pincodeCurrent:"",
+        statePermanent:checked ? prev.stateCurrent:"",
       }));
-      setErrors((prev) => ({ ...prev, permanentAddress: "" }));
+      setErrors((prev) => ({ ...prev, permanentAddress: "",
+         landmarkPermanent: "",
+         villagePermanent: "",
+         pincodePermanent: "",
+         statePermanent:"",
+       }));
       return;
     }
 
@@ -142,7 +153,8 @@ const removeChild = (index) => {
       ...prev,
       [name]: value,
       ...(name === "currentAddress" && prev.sameAddress
-        ? { permanentAddress: value }
+        ? { permanentAddress: value ,
+        }
         : {}),
     }));
 
@@ -359,6 +371,66 @@ onChange={(e) => {
             <small className="err">{errors.currentAddress}</small>
           )}
         </div>
+        {/* ---- Additional Address Info ---- */}
+        <div className="field">
+          <label>
+            Landmark <span className="required-star">*</span>
+          </label>
+          <input
+            name="landmarkCurrent"
+            value={data.landmarkCurrent || ""}
+            onChange={handleChange}
+          />
+          {errors.landmarkCurrent && (<small className="err">{errors.landmarkCurrent}</small>)}
+        </div>
+
+        <div className="field">
+          <label>
+            Pincode <span className="required-star">*</span>
+          </label>
+          <input
+            type="text"
+            name="pincodeCurrent"
+            value={data.pincodeCurrent}
+            onChange={(e) => {
+              const value = e.target.value;
+              // Allow only digits and limit to 6
+              if (/^\d{0,6}$/.test(value)) {
+                setData((prev) => ({ ...prev, pincodeCurrent: value }));
+                setErrors((prev) => ({ ...prev, pincodeCurrent: "" }));
+              }
+            }}
+            placeholder="Enter 6-digit pincode"
+          />
+
+          {errors.pincodeCurrent && <small className="err">{errors.pincodeCurrent}</small>}
+        </div>
+
+        <div className="field">
+          <label>Village</label>
+          <input
+            name="villageCurrent"
+            value={data.villageCurrent || ""}
+            onChange={handleChange}
+          />
+          {errors.villageCurrent && <small className="err">{errors.villageCurrent}</small>}
+
+        </div>
+
+        <div className="field">
+          <label>
+            State <span className="required-star">*</span>
+          </label>
+          <select name="stateCurrent" value={data.stateCurrent || ""} onChange={handleChange}>
+            <option value="">Select State</option>
+            {states.map((state) => (
+              <option key={state} value={state}>
+                {state}
+              </option>
+            ))}
+          </select>
+          {errors.stateCurrent && <small className="err">{errors.stateCurrent}</small>}
+        </div>
 
         <div className="field full checkbox-field">
           <label>
@@ -393,11 +465,12 @@ onChange={(e) => {
             Landmark <span className="required-star">*</span>
           </label>
           <input
-            name="landmark"
-            value={data.landmark || ""}
+            name="landmarkPermanent"
+            value={data.landmarkPermanent || ""}
             onChange={handleChange}
+
           />
-          <small className="err">{errors.landmark}</small>
+          {errors.landmarkPermanent && (<small className="err">{errors.landmarkPermanent}</small>)}
         </div>
 
         <div className="field">
@@ -406,30 +479,30 @@ onChange={(e) => {
           </label>
           <input
             type="text"
-            name="pincode"
-            value={data.pincode}
+            name="pincodePermanent"
+            value={data.pincodePermanent}
             onChange={(e) => {
               const value = e.target.value;
               // Allow only digits and limit to 6
               if (/^\d{0,6}$/.test(value)) {
-                setData((prev) => ({ ...prev, pincode: value }));
-                setErrors((prev) => ({ ...prev, pincode: "" }));
+                setData((prev) => ({ ...prev, pincodePermanent: value }));
+                setErrors((prev) => ({ ...prev, pincodePermanent: "" }));
               }
             }}
             placeholder="Enter 6-digit pincode"
           />
 
-          {errors.pincode && <small className="err">{errors.pincode}</small>}
+          {errors.pincodePermanent && <small className="err">{errors.pincodePermanent}</small>}
         </div>
 
         <div className="field">
           <label>Village</label>
           <input
-            name="village"
-            value={data.village || ""}
+            name="villagePermanent"
+            value={data.villagePermanent || ""}
             onChange={handleChange}
           />
-                    {errors.village && <small className="err">{errors.village}</small>}
+                    {errors.villagePermanent && <small className="err">{errors.villagePermanent}</small>}
 
         </div>
 
@@ -437,7 +510,7 @@ onChange={(e) => {
           <label>
             State <span className="required-star">*</span>
           </label>
-          <select name="state" value={data.state || ""} onChange={handleChange}>
+          <select name="statePermanent" value={data.statePermanent || ""} onChange={handleChange}>
             <option value="">Select State</option>
             {states.map((state) => (
               <option key={state} value={state}>
@@ -445,7 +518,7 @@ onChange={(e) => {
               </option>
             ))}
           </select>
-          {errors.state && <small className="err">{errors.state}</small>}
+          {errors.statePermanent && <small className="err">{errors.statePermanent}</small>}
         </div>
 
         <div className="field">
@@ -665,7 +738,7 @@ onChange={(e) => {
         </div>
 
         {data.isMarried && (
-          <div >
+          <div  style={{display:"flex",flexDirection:"column",gap:"10px"}}>
             <div className="field">
           <label>
             spouse <span className="required-star">*</span>
@@ -679,7 +752,7 @@ onChange={(e) => {
         </div>
         <div className="field">
   <label>
-    Children <span className="required-star">*</span>
+    Children 
   </label>
 
   <div className="tag-input-box">
