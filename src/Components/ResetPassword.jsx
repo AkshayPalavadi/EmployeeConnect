@@ -60,31 +60,53 @@ const ResetPassword = () => {
     validate(name, value);
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setMessage("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMessage("");
 
-  // Run validation for all fields before submitting
-  Object.keys(formData).forEach((key) => validate(key, formData[key]));
-  const hasErrors = Object.values(errors).some((msg) => msg);
-  if (hasErrors) {
-    setMessage("❌ Please fix the highlighted errors before submitting.");
-    return;
-  }
-
-  // 🧪 Simulate API
-  setLoading(true);
-  setTimeout(() => {
-    // Fake password check
-    if (formData.currentPassword === "oldpassword123") {
-      setMessage("✅ Password reset successful!");
-      setTimeout(() => navigate("/login"), 1500);
-    } else {
-      setMessage("❌ Current password is incorrect.");
+    // Run validation for all fields before submitting
+    Object.keys(formData).forEach((key) => validate(key, formData[key]));
+    const hasErrors = Object.values(errors).some((msg) => msg);
+    if (hasErrors) {
+      setMessage("❌ Please fix the highlighted errors before submitting.");
+      return;
     }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+        "https://internal-website-rho.vercel.app/api/auth/password",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            currentPassword: formData.currentPassword,
+            newPassword: formData.newPassword,
+            confirmPassword: formData.confirmPassword,
+          }),
+        }
+      );
+
+      const data = await response.json();
+      console.log("Password Reset Response:", data);
+
+      if (response.ok) {
+        setMessage("✅ Password updated successfully!");
+        setTimeout(() => navigate("/login"), 1500);
+      } else {
+        setMessage(`❌ ${data.message || "Password update failed."}`);
+      }
+    } catch (err) {
+      console.error(err);
+      setMessage("❌ Server unreachable. Try again later.");
+    }
+
     setLoading(false);
-  }, 1500);
-};
+  };
 
   return (
     <div className="resetpassword-emp-register-container">
