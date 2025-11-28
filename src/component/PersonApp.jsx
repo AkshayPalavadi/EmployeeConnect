@@ -16,9 +16,6 @@ import {
 function PersonApp({ setApplicationSubmitted }) {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  localStorage.setItem("token", response.data.token);
-  console.log(localStorage.getItem("token"));
-  console.log( localStorage.setItem("token", response.data.token));
 
 
   // -------------------- STEP MANAGEMENT --------------------
@@ -177,7 +174,7 @@ const submitAllData = async () => {
         roles: "",
         projects: "",
         skills: "",
-        offerLetter:"",
+        offerLetter:null,
         relivingLetter: null,
         salarySlips: null,
         hrName: "",
@@ -331,6 +328,10 @@ const submitAllData = async () => {
     console.log("❌ Save failed, staying on this step.");
   }
 };
+const prevStep = () => {
+  setCurrentStep(prev => Math.max(prev - 1, 0));
+};
+
 
 
   // -------------------- RENDER --------------------
