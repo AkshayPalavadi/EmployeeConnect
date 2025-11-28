@@ -571,19 +571,19 @@ onChange={(e) => {
           </label>
           <input
             type="tel"
-            name="nominee1phone"
-            value={data.nominee1phone}
+            name="nominee1Phone"
+            value={data.nominee1Phone}
             onChange={(e) => {
               const value = e.target.value;
               // Allow only digits and limit to 10
               if (/^\d{0,10}$/.test(value)) {
-                setData((prev) => ({ ...prev, nominee1phone: value }));
-                setErrors((prev) => ({ ...prev, nominee1phone: "" }));
+                setData((prev) => ({ ...prev, nominee1Phone: value }));
+                setErrors((prev) => ({ ...prev, nominee1Phone: "" }));
               }
             }}
             placeholder="Enter 10-digit number"
           />
-          {errors.nominee1phone && <small className="err">{errors.nominee1phone}</small>}
+          {errors.nominee1Phone && <small className="err">{errors.nominee1Phone}</small>}
         </div>
         
         <div className="field">
@@ -627,19 +627,19 @@ onChange={(e) => {
           </label>
           <input
             type="tel"
-            name="nominee2phone"
-            value={data.nominee2phone}
+            name="nominee2Phone"
+            value={data.nominee2Phone}
             onChange={(e) => {
               const value = e.target.value;
               // Allow only digits and limit to 10
               if (/^\d{0,10}$/.test(value)) {
-                setData((prev) => ({ ...prev, nominee2phone: value }));
-                setErrors((prev) => ({ ...prev, nominee2phone: "" }));
+                setData((prev) => ({ ...prev, nominee2Phone: value }));
+                setErrors((prev) => ({ ...prev, nominee2Phone: "" }));
               }
             }}
             placeholder="Enter 10-digit number"
           />
-          {errors.nominee2phone && <small className="err">{errors.nominee2phone}</small>}
+          {errors.nominee2Phone && <small className="err">{errors.nominee2Phone}</small>}
         </div>
         <div className="field">
           <label>
