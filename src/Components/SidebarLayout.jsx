@@ -1,54 +1,34 @@
-import React, { useRef, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import defaultAvatar from "../assets/logo.jpg";
 
-function SidebarLayout({ userName, setUserName, userPhoto, setUserPhoto }) {
+function SidebarLayout() {
   const [showMenu, setShowMenu] = useState(false);
-  const [editingName, setEditingName] = useState(false);
-  const [tempName, setTempName] = useState(userName);
-  const fileInputRef = useRef(null);
+  const [apiPhoto, setApiPhoto] = useState(null);
   const navigate = useNavigate();
   const { pathname } = useLocation();
-
-  // ---------- PHOTO ----------
-  const handlePhotoClick = () => setShowMenu(!showMenu);
-  const handleAddPhoto = () => {
-    fileInputRef.current.click();
-    setShowMenu(false);
-  };
-  const handleRemovePhoto = () => {
-    setUserPhoto(null);
-    setShowMenu(false);
-  };
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => setUserPhoto(reader.result);
-      reader.readAsDataURL(file);
-    }
-  };
-
-  // ---------- NAME ----------
-  const handleEditName = () => {
-    setEditingName(true);
-    setTempName(userName);
-  };
-  const handleSaveName = () => {
-    setUserName(tempName);
-    setEditingName(false);
-  };
-  const handleCancelEdit = () => {
-    setEditingName(false);
-    setTempName(userName);
-  };
+  const empName = localStorage.getItem("employeeName");
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userRole");
+    localStorage.clear();
     navigate("/login");
   };
+
+  useEffect(() => {
+    const email = localStorage.getItem("userEmail");  // You should already store email on login
+
+    if (!email) return;
+
+    fetch(`https://internal-website-rho.vercel.app/api/employee/${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setApiPhoto(data.personal?.photo || null);
+      })
+      .catch((err) => console.error("API error:", err));
+  }, []);
 
   return (
     <div className="sidebarlayout-layout">
@@ -62,47 +42,16 @@ function SidebarLayout({ userName, setUserName, userPhoto, setUserPhoto }) {
       <aside className={`sidebarlayout-sidebar-inner ${showMenu ? "sidebar-open" : ""}`}>
         <div className="sidebarlayout-profile-section">
           <div className="sidebarlayout-photo-name-container">
-            <div className="sidebarlayout-photo-wrapper" onClick={handlePhotoClick}>
-              <img src={userPhoto || defaultAvatar} alt="Profile" />
-              {showMenu && (
-                <div className="sidebarlayout-photo-menu">
-                  <button onClick={handleAddPhoto}>Add Photo</button>
-                  {userPhoto && <button onClick={handleRemovePhoto}>Remove Photo</button>}
-                </div>
-              )}
+            <div className="sidebarlayout-photo-wrapper">
+              <img 
+                src={apiPhoto || defaultAvatar} 
+                alt="Profile"
+              />
             </div>
-
             <div className="sidebarlayout-username-section">
-              {editingName ? (
-                <div className="sidebarlayout-edit-name-box">
-                  <input
-                    type="text"
-                    value={tempName}
-                    onChange={(e) => setTempName(e.target.value)}
-                  />
-                  <div className="sidebarlayout-name-buttons">
-                    <button onClick={handleSaveName}>Save</button>
-                    <button onClick={handleCancelEdit}>Cancel</button>
-                  </div>
-                </div>
-              ) : (
-                <div className="sidebarlayout-name-display">
-                  <p>{userName}</p>
-                  <button className="sidebarlayout-edit-name-btn" onClick={handleEditName}>
-                    Edit
-                  </button>
-                </div>
-              )}
+              {empName}
             </div>
           </div>
-
-          <input
-            type="file"
-            accept="image/*"
-            ref={fileInputRef}
-            style={{ display: "none" }}
-            onChange={handleFileChange}
-          />
         </div>
 
         {/* Sidebar Links */}

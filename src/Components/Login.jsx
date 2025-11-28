@@ -7,7 +7,7 @@ import logo from "../assets/logo.jpg";
 function Login({ setIsLoggedIn, setUserRole }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("employee");
+  const [role, setRole] = useState("Employee");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -48,77 +48,68 @@ function Login({ setIsLoggedIn, setUserRole }) {
 
         const user = result.employee;
 
+        // ❗ Role Mismatch Check
+        if (user.role !== role) {
+          setError(`Role mismatch`);
+          localStorage.clear();  // optional
+          return; // stop login
+        }
+
         if (user) {
+          // ❗ CHECK IF SELECTED ROLE MATCHES USER ROLE
+          if (user.role !== role) {
+            setError(`Role mismatch`);
+            return; // stop login
+          }
+
           // ✅ Store user details
-          localStorage.setItem("employeeName", `${user.firstName} ${user.lastName}`);
+          // localStorage.setItem("employeeName", `${user.firstName} ${user.lastName}`);
           localStorage.setItem("userEmail", user.email);
-          localStorage.setItem("userRole", role);
+          localStorage.setItem("userRole", user.role);
           localStorage.setItem("isLoggedIn", "true");
           localStorage.setItem("mustFillPersonalDetails", result.mustFillPersonalDetails);
-localStorage.setItem("mustFillEducationDetails", result.mustFillEducationDetails);
-localStorage.setItem("mustFillProfessionalDetails", result.mustFillProfessionalDetails);
+          localStorage.setItem("mustFillEducationDetails", result.mustFillEducationDetails);
+          localStorage.setItem("mustFillProfessionalDetails", result.mustFillProfessionalDetails);
           setIsLoggedIn(true);
-          setUserRole(role);
+          setUserRole(user.role);
 
-
-          // Step 3: Fetch Full Employee Details to get employeeId & experience
+          // 2️⃣ Fetch full employee data
           try {
             const empFullRes = await fetch(
-              `https://internal-website-rho.vercel.app/api/employee/${user.email}`
+              `https://internal-website-rho.vercel.app/api/employee/${user.email}`,
             );
-
             const empFullData = await empFullRes.json();
-            console.log("📌 Full Employee Details:", empFullData);
 
-            if (empFullRes.ok && empFullData.professional) {
-              const professional = empFullData.professional;
+            if (empFullRes.ok) {
+              const personal = empFullData.personal || {};
+              const professional = empFullData.professional || {};
+              const education = empFullData.education || {};
 
-              // Save Employee ID
-              if (professional.employeeId) {
-                localStorage.setItem("employeeId", professional.employeeId);
-                console.log("✔ Employee ID Saved:", professional.employeeId);
-              }
+              // Personal
+              localStorage.setItem(
+                "employeeName",
+                `${personal.firstName || ""} ${personal.lastName || ""}`
+              );
+              localStorage.setItem("employeePhoto", personal.photo || "");
 
-              // Save Department
-              if (professional.department) {
-                localStorage.setItem("employeeDepartment", professional.department);
-              }
+              // Professional
+              localStorage.setItem("employeeId", professional.employeeId || "");
+              localStorage.setItem("employeeDepartment", professional.department || "");
+              localStorage.setItem("employeeDateOfJoining", professional.dateOfJoining || "");
 
-              // Save Date of Joining
-              if (professional.dateOfJoining) {
-                localStorage.setItem("employeeDateOfJoining", professional.dateOfJoining);
-              }
-
-              // ⭐ Calculate Experience from dateOfJoining to today
               if (professional.dateOfJoining) {
                 const joiningDate = new Date(professional.dateOfJoining);
                 const today = new Date();
-
-                // Calculate difference in milliseconds → convert to years
-                const diffInMs = today - joiningDate;
-                const years = diffInMs / (1000 * 60 * 60 * 24 * 365);
-
-                // Round to 2 decimals
-                const experienceYears = years.toFixed(2);
-
-                localStorage.setItem("employeeExperience", experienceYears);
-                console.log("📅 Experience Saved:", experienceYears, "years");
+                const diff = (today - joiningDate) / (1000 * 60 * 60 * 24 * 365);
+                localStorage.setItem("employeeExperience", diff.toFixed(2));
               }
-            } else {
-              console.warn("❌ Employee details not found in response");
             }
-          } catch (error) {
-            console.error("❌ Error fetching full employee details:", error);
+          } catch (err) {
+            console.error("Error fetching employee details:", err);
           }
 
-                    if (role === "employee") {
-
-            navigate("/employee/home");
-              window.location.reload();
-
-          } else if (role === "admin") {
-            navigate("/admin");
-          }
+          // 3️⃣ Now navigate after storing everything
+          navigate(user.role === "Employee" ? "/employee/home" : "/admin");
         } else {
           setError("User data not found in employee list.");
         }
@@ -149,8 +140,8 @@ localStorage.setItem("mustFillProfessionalDetails", result.mustFillProfessionalD
 
           <label>Select Role:</label>
           <select value={role} onChange={(e) => setRole(e.target.value)}>
-            <option value="employee">Employee</option>
-            <option value="admin">Admin</option>
+            <option value="Employee">Employee</option>
+            <option value="Admin">Admin</option>
           </select>
 
           <label>Email Id :</label>
