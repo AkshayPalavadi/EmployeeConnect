@@ -172,7 +172,7 @@ const submitAllData = async () => {
         roles: "",
         projects: "",
         skills: "",
-        salary: "",
+        offerLetter:"",
         relivingLetter: null,
         salarySlips: null,
         hrName: "",
@@ -208,7 +208,7 @@ const submitAllData = async () => {
       else formData.append(key, personal[key] ?? "");
     }
 
-    console.log("📤 Sending data to: /api/personal/save");
+    console.log("📤 Sending data to: ","https://internal-website-rho.vercel.app/api/personal/save");
 
     const res = await axios.post(
 "https://internal-website-rho.vercel.app/api/personal/save",
@@ -308,29 +308,25 @@ const submitAllData = async () => {
 
   let success = false;
 
-  
-  
-  setCurrentStep(prev => prev + 1); // just go next  
+  if (currentStep === 0) {
+    success = await savePersonal();
+  } else if (currentStep === 1) {
+    success = await saveEducation();
+  } else if (currentStep === 2) {
+    success = await saveProfessional();
+  } else {
+    success = true; // Review step does no saving
+  }
 
-
-  // ✅ Always log the result
   console.log("🟢 Save success?", success);
 
   if (success) {
-    console.log("➡️ Moving to next step...");
-    setCurrentStep((prev) => {
-      console.log("🔄 Next Step Index:", prev + 1);
-      return Math.min(prev + 1, steps.length - 1);
-    });
+    setCurrentStep(prev => prev + 1);
   } else {
     console.log("❌ Save failed, staying on this step.");
   }
 };
 
-
-  const prevStep = () => {
-    setCurrentStep((prev) => Math.max(prev - 1, 0));
-  };
 
   // -------------------- RENDER --------------------
   return (
