@@ -67,11 +67,16 @@ const ReviewSubmit = ({ personal, education, professional,prevStep, setErrors, o
             {renderField('Nominee 2 Percentage', personal.nominee2Percentage)}
             {renderField('Current Address', personal.currentAddress)}
             {renderField('Permanent Address', personal.permanentAddress)}
-            {renderField('Same as Permanent', personal.sameAddress ? 'Yes' : 'No')}
-            {renderField('Landmark', personal.landmark)}
-            {renderField('Pincode', personal.pincode)}
-            {renderField('Village', personal.village)}
-            {renderField('State', personal.state)}
+          {renderField('Current Landmark', personal.landmarkCurrent)}
+{renderField('Current Pincode', personal.pincodeCurrent)}
+{renderField('Current Village', personal.villageCurrent)}
+{renderField('Current State', personal.stateCurrent)}
+
+{renderField('Permanent Landmark', personal.landmarkPermanent)}
+{renderField('Permanent Pincode', personal.pincodePermanent)}
+{renderField('Permanent Village', personal.villagePermanent)}
+{renderField('Permanent State', personal.statePermanent)}
+
             {renderField('Aadhar Number', personal.aadharNumber)}
             {renderField('PAN Number', personal.panNumber)}
             {renderField('Photo', personal.photo ? personal.photo.name : 'No file uploaded')}
