@@ -16,6 +16,11 @@ import {
 function PersonApp({ setApplicationSubmitted }) {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+  localStorage.setItem("token", response.data.token);
+  console.log(localStorage.getItem("token"));
+  console.log( localStorage.setItem("token", response.data.token));
+
+
   // -------------------- STEP MANAGEMENT --------------------
   const steps = [
     "Personal Details",
