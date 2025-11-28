@@ -59,7 +59,7 @@
 .images {
   position: relative;
   width: 98%;
-  height: calc(100%-115px);   /* max container height */
+  height: calc(100% - 115px);   /* max container height */
   overflow: hidden;
   margin-top: 5px;
   /* margin-left: 40px; */
