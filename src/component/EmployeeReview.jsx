@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
-import "./EmployeeDetails.css";
+import "./EmployeeReview.css";
 
 export default function EmployeeDetails() {
   const navigate = useNavigate();
