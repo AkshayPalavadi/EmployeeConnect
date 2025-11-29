@@ -70,6 +70,8 @@ const EducationDetails = ({
 
   const next = () => {
     const errs = simpleValidateEducation(data);
+    console.log("🔥 next() clicked");
+
     setErrors(errs);
     if (Object.keys(errs).length === 0) {
       nextStep();
@@ -589,7 +591,7 @@ const EducationDetails = ({
         <button className="btn secondary" onClick={prev}>
           Back: Personal
         </button>
-        <button className="btn primary" onClick={next}>
+        <button className="btn primary" onClick={nextStep}>
           Next: Professional
         </button>
       </div>

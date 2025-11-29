@@ -50,7 +50,8 @@ function Login({ setIsLoggedIn, setUserRole }) {
 
         // ❗ Role Mismatch Check
         if (user.role !== role) {
-          setError(`Role mismatch`);
+          setError("Role mismatch");
+
           localStorage.clear();  // optional
           return; // stop login
         }
@@ -58,12 +59,12 @@ function Login({ setIsLoggedIn, setUserRole }) {
         if (user) {
           // ❗ CHECK IF SELECTED ROLE MATCHES USER ROLE
           if (user.role !== role) {
-            setError(`Role mismatch`);
+            setError("Role mismatch");
             return; // stop login
           }
 
           // ✅ Store user details
-          // localStorage.setItem("employeeName", `${user.firstName} ${user.lastName}`);
+          // localStorage.setItem("employeeName", ${user.firstName} ${user.lastName});
           localStorage.setItem("userEmail", user.email);
           localStorage.setItem("userRole", user.role);
           localStorage.setItem("isLoggedIn", "true");
@@ -73,7 +74,11 @@ function Login({ setIsLoggedIn, setUserRole }) {
           setIsLoggedIn(true);
           setUserRole(user.role);
 
+          const mustFillPersonalDetails = localStorage.getItem("mustFillPersonalDetails") === "true";
+          const mustFillEducationDetails = localStorage.getItem("mustFillEducationDetails") === "true";
+          const mustFillProfessionalDetails = localStorage.getItem("mustFillProfessionalDetails") === "true";
           // 2️⃣ Fetch full employee data
+          if(!mustFillPersonalDetails && !mustFillEducationDetails && !mustFillProfessionalDetails){
           try {
             const empFullRes = await fetch(
               `https://internal-website-rho.vercel.app/api/employee/${user.email}`,
@@ -107,9 +112,12 @@ function Login({ setIsLoggedIn, setUserRole }) {
           } catch (err) {
             console.error("Error fetching employee details:", err);
           }
+          }
 
           // 3️⃣ Now navigate after storing everything
           navigate(user.role === "Employee" ? "/employee/home" : "/admin");
+          window.location.reload();
+
         } else {
           setError("User data not found in employee list.");
         }

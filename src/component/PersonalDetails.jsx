@@ -810,7 +810,7 @@ onChange={(e) => {
       </div>
 
       <div className="form-actions">
-        <button className="btn primary" onClick={next}>
+        <button className="btn primary" onClick={nextStep}>
           Next: Education
         </button>
       </div>

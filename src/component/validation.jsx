@@ -10,6 +10,9 @@ const namePattern = /^[A-Za-z\s]{1,75}$/;
 const isValidEmail = (s) =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(s || "").trim());
 
+
+
+
 // Helper: check file validity
 const isValidPDF = (file) =>
   file instanceof File &&
@@ -21,9 +24,7 @@ const isValidPDF = (file) =>
 // ==============================
 export const simpleValidatePersonal = (data) => {
   const errs = {};
-
-
-  // First Name
+   // First Name
   if (isEmpty(data.firstName)) errs.firstName = "First name is required";
   else if (!namePattern.test(data.firstName))
     errs.firstName = "Last name should contain only letters";
@@ -66,11 +67,11 @@ export const simpleValidatePersonal = (data) => {
   if (isEmpty(data.nominee1Relation)) errs.nominee1Relation = "Nominee1 Relation is required";
   if (isEmpty(data.nominee1Percentage)) errs.nominee1Percentage = "Nominee1 Percentage is required";
   
-  if (isEmpty(data.nominee1phone)) errs.nominee1phone = "Phone number is required";
-  else if (!isPhone(data.nominee1phone)) errs.nominee1phone = "Enter valid 10-digit number";
+  if (isEmpty(data.nominee1Phone)) errs.nominee1Phone = "Phone number is required";
+  else if (!isPhone(data.nominee1Phone)) errs.nominee1Phone = "Enter valid 10-digit number";
     
-  if (isEmpty(data.nominee2phone)) errs.nominee2phone = "Phone number is required";
-  else if (!isPhone(data.nominee2phone)) errs.nominee2phone = "Enter valid 10-digit number";
+  if (isEmpty(data.nominee2Phone)) errs.nominee2Phone = "Phone number is required";
+  else if (!isPhone(data.nominee2Phone)) errs.nominee2Phone = "Enter valid 10-digit number";
   
     if (isEmpty(data.nominee2)) errs.nominee2 = "Nominee2 is required";
   if (isEmpty(data.nominee2Relation)) errs.nominee2Relation = "Nominee2 Relation is required";

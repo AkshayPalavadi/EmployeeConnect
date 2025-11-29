@@ -306,6 +306,8 @@ const submitAllData = async () => {
 
   const isValid = validateCurrentStep();
   console.log("🔹 Validation Passed?", isValid);
+  console.log(errors);
+
 
   if (!isValid) return;
 
