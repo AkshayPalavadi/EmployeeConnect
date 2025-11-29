@@ -213,7 +213,7 @@ export default function EmployeeDetails() {
         return;
       }
 
-      const res = await axios.get(`/api/employee/${employeeEmail}`, {
+      const res = await axios.get(`https://internal-website-rho.vercel.app/api/employee/${employeeEmail}`, {
         // timeout: 10000,
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -408,7 +408,7 @@ export default function EmployeeDetails() {
 
       // keep main employee row in sync (send JSON)
       const combined = { personal, education, professional };
-      await axios.put(`/api/employee/update/${employeeEmail}`, combined, {
+      await axios.put(`https://internal-website-rho.vercel.app/api/employee/update/${employeeEmail}`, combined, {
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
         timeout: 15000,
       });
