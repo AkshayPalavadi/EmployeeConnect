@@ -864,9 +864,7 @@ export default function EmployeeDetails() {
   // -----------------------------
   return (
     <div className="employee-details-container">
-      <button className="back-button" onClick={() => navigate("/admin/employees")}>
-        ← Back
-      </button>
+     
 
       {/* HEADER */}
       <div className="employee-header">
