@@ -74,14 +74,13 @@ function Login({ setIsLoggedIn, setUserRole }) {
           setIsLoggedIn(true);
           setUserRole(user.role);
 
-          const mustFillPersonalDetails = localStorage.getItem("mustFillPersonalDetails") === "true";
-          const mustFillEducationDetails = localStorage.getItem("mustFillEducationDetails") === "true";
-          const mustFillProfessionalDetails = localStorage.getItem("mustFillProfessionalDetails") === "true";
+          const userRole = localStorage.getItem("userRole");
           // 2️⃣ Fetch full employee data
-          if(!mustFillPersonalDetails && !mustFillEducationDetails && !mustFillProfessionalDetails){
+          if(userRole === "Employee"){
           try {
+            const userEmail = localStorage.getItem("userEmail");
             const empFullRes = await fetch(
-              `https://internal-website-rho.vercel.app/api/employee/${user.email}`,
+              `https://internal-website-rho.vercel.app/api/employee/${userEmail}`,
             );
             const empFullData = await empFullRes.json();
 
@@ -95,7 +94,7 @@ function Login({ setIsLoggedIn, setUserRole }) {
                 "employeeName",
                 `${personal.firstName || ""} ${personal.lastName || ""}`
               );
-              localStorage.setItem("employeePhoto", personal.photo || "");
+              // localStorage.setItem("employeePhoto", personal.photo || "");
 
               // Professional
               localStorage.setItem("employeeId", professional.employeeId || "");
